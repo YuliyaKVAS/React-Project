@@ -51,6 +51,7 @@ const signIn = ({email, password}) => {
   }
 
   if(email.length === 0 || password.length === 0){
+
     return{
       isSignIn: false,
       errorMsg: "All fields must be filled"
@@ -60,16 +61,15 @@ const signIn = ({email, password}) => {
   else if(localStorage.getItem(email)===null){
     return {
       isSignIn: false,
-      errorMsg: "No such user exists"
+      errorMsg: "No such user exists",
     }
   }
 
   else if(localStorage.getItem(email)!==null && password!=JSON.parse(localStorage.getItem(email)).password){
-    //let currentUser = null;
+
     return {
        isSignIn: false,
-       errorMsg: "Wrong password",
-       //currentUser
+       errorMsg: "Wrong password"
     }
   }
   else{
@@ -83,7 +83,7 @@ const signIn = ({email, password}) => {
     localStorage.setItem('currentUser', JSON.stringify(currentUser));
     return {
       isSignIn: true,
-      currentUser
+      currentUser /// 11111important
       //currentUserEmail: currentUser.email,
       //currentUserName: currentUser.name
     }

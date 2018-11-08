@@ -43,8 +43,15 @@ export default class FormDialogAuto extends React.Component {
       email: this.state.email,
       password: this.state.password
     });
-
-    this.props.setCurrentUser(obj.currentUser);
+    //
+    //if(obj.isSignIn){
+     // this.props.setCurrentUser(obj.currentUser);
+   // }
+    //
+    if(obj.currentUser){
+      this.props.setCurrentUser(obj.currentUser);
+    }
+  
     //this.props.setCurrentUser(obj);
     if(obj.isSignIn){
       this.setState({open: false})

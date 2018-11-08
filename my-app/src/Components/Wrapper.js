@@ -32,6 +32,7 @@ class Wrapper extends React.Component{
     super(props);
     this.state = {
       value: 0,
+      //currentUser: null
       currentUser: null
     };
     this.handleChange = this.handleChange.bind(this);
@@ -43,12 +44,14 @@ class Wrapper extends React.Component{
   };
 
   setCurrentUser = (user) => {
-      this.setState({
-        currentUser: {
-          email: user.email,
-          name: user.name
-        }
-      })
+      if(user){
+        this.setState({
+          currentUser: {
+            email: user.email,
+            name: user.name
+          }
+        })
+      }
   }
 
   componentDidMount(){
