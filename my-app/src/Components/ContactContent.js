@@ -15,7 +15,7 @@ import MediaCard from './Images';
 const styles = {
   text:{
     color: 'white',
-    padding: '36px'
+    padding: '24px'
   },
   grid:{
     margin: 'auto',
@@ -32,9 +32,12 @@ function ContactContent(props){
               <Typography variant ='h3' component="h5" className={classes.text}>
                 Where you can find us
               </Typography>
+              <Typography component="p" variant='h5' className={classes.text}>
+              You can find us at the address below.
+              </Typography>
         </Grid>
         <Grid item sm={6} className={classes.grid}>
-        <MediaCard src={"/images/blackandwhite.ProperBarbershop-6.jpg"}
+        <MediaCard src={"/images/barber_building.jpg"}
           title={"Title"}
           description={"best people"}
           header={"Title"}
@@ -42,27 +45,29 @@ function ContactContent(props){
         </Grid>
         <Grid item sm={4} className={classes.grid}>
                 <Typography variant ='h4' component="h5" className={classes.text} >
-                    jfjjjdjjdd
+                    Our address:
                 </Typography>
-                <Typography component="p" className={classes.text}>
-                    jdjddhd<br/>
-                    hfhhhfhfhfhh
+                <Typography component="p" variant='h6' className={classes.text}>
+                  25 Carnaby Street, off 78<br/>
+                  LIVERPOOL<br/>
+                  NR32 4WY<br/>
+                  UK
+                  
                 </Typography>
         </Grid>
         <Grid item sm={6} className={classes.grid}>
-          <MediaCard src={"/images/blackandwhite.ProperBarbershop-6.jpg"}
+          <MediaCard src={"/images/map-img4.jpg"}
             title={"Title"}
             description={"best people"}
             header={"Title"}
           />
         </Grid>
         <Grid item sm={4} className={classes.grid}>
-        <Typography variant ='h3' component="h5" className={classes.text} >
-            jfjjjdjjdd
-        </Typography>
-        <Typography component="p" className={classes.text}>
-            jdjddhd<br/>
-            hfhhhfhfhfhh
+        <Typography component="p" variant="h6" className={classes.text}>
+            The nearest metro station is Aldgate East<br/>
+            turn left when exiting the metro<br />
+            For all questions <strong>please call:</strong><br/>
+            +44-7871234567
         </Typography>
         </Grid>
       </Grid>
