@@ -12,6 +12,8 @@ import Typography from '@material-ui/core/Typography';
 import Types from './HomeContent';
 import AboutUsContent from './AboutUsContent';
 import ContactContent from './ContactContent';
+import RecipeReviewCard from './MyProfile';
+import MyProfile from './MyProfile';
 
 function TabContainer(props) {
   return (
@@ -47,6 +49,9 @@ class DefineContent extends React.Component{
     }
     if(value===3){
       return <ContactContent />
+    }
+    if(value===4){
+      return <RecipeReviewCard />
     }
   }
 }

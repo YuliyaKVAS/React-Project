@@ -24,6 +24,7 @@ export default class LogOutDialog extends React.Component{
 
     handleLogOut = () => {
         logOut();
+        this.props.setCurrentUser(null)
         this.setState({open: false})
     };
 

@@ -45,6 +45,7 @@ class NavTabs extends React.Component {
               <LinkTab label="ABOUT US" href="/aboutus/" />
               <LinkTab label="SERVICES" href="/services/" />
               <LinkTab label="CONTUCT" href="contuct" />
+              {this.props.currentUser && <LinkTab label="MY PROFILE" href="personal" />}
             </Tabs>
           </AppBar>
 

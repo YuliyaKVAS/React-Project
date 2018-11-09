@@ -52,6 +52,10 @@ class Wrapper extends React.Component{
             name: user.name
           }
         })
+      }else {
+        this.setState({
+          currentUser: null
+        })
       }
   }
 
@@ -63,10 +67,9 @@ class Wrapper extends React.Component{
 //  const {classes} = props;
 
   return (
-      <Grid container spasing={24} style={{background:'black',
-                                            marginBottom:0}} >
+      <Grid container spasing={24} style={{background:'black'}} >
       <Grid item xs={12}>          
-          <NavTab value={this.state.value} handleChange={this.handleChange}/>
+          <NavTab value={this.state.value} handleChange={this.handleChange} currentUser={this.state.currentUser}/>
           {this.state.currentUser && <h2 style={{color: 'white'}}>Hello, {this.state.currentUser.name}</h2>}
           {/*<FormDialogReg currentUser={this.state.currentUser}/>
           <FormDialogAuto setCurrentUser={this.setCurrentUser}/>

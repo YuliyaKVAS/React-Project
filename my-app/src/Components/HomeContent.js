@@ -10,6 +10,8 @@ import FormDialogReg from './DialogForm';
 import FormDialogAuto from './FormDialogAuto';
 import CardContent from '@material-ui/core/CardContent';
 import MyCard from './Card';
+//import RecipeReviewCard from './MyProfile';
+import Accordeon from './Accordeon';
 
 const styles = {
   root: {
@@ -42,7 +44,8 @@ const styles = {
   item:{
     marginTop:'32px',
     justify: 'center',
-    marginBottom: 0
+    marginBottom: '16px',
+    padding: '8px'
   },
   itemMaxWidth:{
     minWidth: '100%'
@@ -63,37 +66,21 @@ function Types(props) {
     <div className={classes.root}>
 
       <Grid  container spasing={24} style={{background:'rgba(0,0,255,0.1)'}} >
-      <Grid item sm={7} className={classes.item}>
+      <Grid item sm={12} className={classes.item}>
         <Typography variant='h1' component="h3" className={classes.text}>barbershop</Typography>
-        <Typography component='p' variant='h6' className={classes.text}>
-        the place where you get smarter
-        <br />the place where you get smarter
-        <br />the place where you get smarter
-        </Typography>
-      </Grid>
-      <Grid item sm={5} className={classes.item}>
       </Grid>
 
-          <Grid item xs={6} className={classes.item}>
-            <MediaCard src={"/images/blackandwhite.ProperBarbershop-6.jpg"}
-            title={"Title"}
-            description={"best people"}
-            header={"Title"}
-            />
+          <Grid item xs={12} className={classes.item}>
+            <Accordeon />
           </Grid>
+          
           <Grid item xs={6} className={classes.item}>
-            <MediaCard src={"/images/TexasRichardson_barberShop.jpg"} 
-            title={"hfhf"} 
-            description={"hd"} 
-            header={"nnd"}/>
-          </Grid>
-          <Grid item sm={6} className={classes.item}>
               <MediaCard src={"/images/barber.jpg"} 
               title={"hfhf"} 
               description={"hd"} 
               header={"nnd"}/>
           </Grid>
-          <Grid item sm={6} className={classes.item}>
+          <Grid item xs={6} className={classes.item}>
               <MediaCard src={"/images/barber-img1.jpg"} 
               title={"hfhf"} 
               description={"hd"} 
