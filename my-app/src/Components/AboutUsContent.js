@@ -26,7 +26,15 @@ function AboutUsContent(props){
   <Grid container spasing={24} style={{background:'rgba(0,0,155,0.1)'}} >
       <Grid item sm={4}>
         <Paper className={classes.paper}><Typography variant="h5" component="h3">
-          This is a sheet of paper.
+        The main concept of our salon is quality
+        </Typography>
+        <Typography component="p">
+        All our masters are professionals
+        </Typography></Paper>
+      </Grid>
+      <Grid item sm={4}>
+          <Paper className={classes.paper}><Typography variant="h5" component="h3">
+          The atmosphere in our salon will allow you to relax
         </Typography>
         <Typography component="p">
           Paper can be used to build surface or other elements for your application.
@@ -34,32 +42,24 @@ function AboutUsContent(props){
       </Grid>
       <Grid item sm={4}>
           <Paper className={classes.paper}><Typography variant="h5" component="h3">
-          This is a sheet of paper.
+            Сonvenient location of our salon
         </Typography>
         <Typography component="p">
-          Paper can be used to build surface or other elements for your application.
-        </Typography></Paper>
-      </Grid>
-      <Grid item sm={4}>
-          <Paper className={classes.paper}><Typography variant="h5" component="h3">
-          This is a sheet of paper.
-        </Typography>
-        <Typography component="p">
-          Paper can be used to build surface or other elements for your application.
+          will allow you to save your time
         </Typography></Paper>
       </Grid>
       <Grid item sm={6}>
         <MediaCard src={"/images/blackandwhite.ProperBarbershop-6.jpg"}
         title={"Title"}
-        description={"best people"}
-        header={"Title"}
+        description={"we care about your health using only hypoallergenic cosmetics"}
+        header={"Only high-quality materials and cosmetics"}
       />
       </Grid>
       <Grid item sm={6}>
-        <MediaCard src={"/images/blackandwhite.ProperBarbershop-6.jpg"}
+        <MediaCard src={"/images/coffee.jpg"}
         title={"Title"}
-        description={"best people"}
-        header={"Title"}
+        description={"We have all kinds of coffee and tea as well as other drinks"}
+        header={"We offer all our customers tea and coffee"}
       />
       </Grid>
     </Grid>

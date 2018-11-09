@@ -63,7 +63,8 @@ class Wrapper extends React.Component{
 //  const {classes} = props;
 
   return (
-      <Grid container spasing={24} style={{background:'black'}} >
+      <Grid container spasing={24} style={{background:'black',
+                                            marginBottom:0}} >
       <Grid item xs={12}>          
           <NavTab value={this.state.value} handleChange={this.handleChange}/>
           {this.state.currentUser && <h2 style={{color: 'white'}}>Hello, {this.state.currentUser.name}</h2>}

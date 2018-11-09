@@ -96,6 +96,7 @@ function getCurrentUser() {
 }
 
 function logOut(){
+  window.location.reload();
   return localStorage.removeItem('currentUser');
 }
 

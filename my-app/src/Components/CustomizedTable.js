@@ -8,14 +8,17 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-
+import Button from '@material-ui/core/Button';
 const CustomTableCell = withStyles(theme => ({
   head: {
-    backgroundColor: theme.palette.common.black,
-    color: theme.palette.common.white,
+    backgroundColor: theme.palette.primary,
+    color: theme.palette.common.black,
+    fontSize: 18,
+    weight: 800,
+    color: 'darkblue'
   },
   body: {
-    fontSize: 14,
+    fontSize: 16,
   },
 }))(TableCell);
 
@@ -39,27 +42,39 @@ const styles = theme => ({
     color: 'white',
     margin: 'auto'
   },
+  text:{
+    color: 'white',
+    padding: '24px'
+  },
+  button:{
+    margin: theme.spacing.unit,
+    color: 'darkblue'
+  }
 });
 
 let id = 0;
-function createData(name, calories, fat, carbs, protein) {
+function createData(name, price) {
   id += 1;
-  return { id, name, calories, fat, carbs, protein };
+  return { id, name, price };
 }
 
 const rows = [
-  createData('Frozen yoghurt', 159),
-  createData('Ice cream sandwich', 237),
-  createData('Eclair', 262),
-  createData('Cupcake', 305),
-  createData('Gingerbread', 356),
+  createData('male haircut', '11.40 £'),
+  createData('female haircut (long hair)', '19,38 £'),
+  createData('female haircut (medium hair)', '17,10 £'),
+  createData('hair coloring', '22,80 £'),
+  createData('beard trim', '5,70 £'),
+  createData('manicure', '17,10 £'),
 ];
 
 function CustomizedTable(props) {
   const { classes } = props;
 
   return (
-
+    <div>
+    <Typography component="h3" variant="h5" className={classes.text}>  
+          You can find information about the cost of services in our salon below:
+    </Typography>
     <Paper className={classes.root}>
       <Table className={classes.table}>
         <TableHead>
@@ -75,13 +90,25 @@ function CustomizedTable(props) {
                 <CustomTableCell component="th" scope="row">
                   {row.name}
                 </CustomTableCell>
-                <CustomTableCell numeric>{row.calories}</CustomTableCell>
+                <CustomTableCell numeric>{row.price}</CustomTableCell>
               </TableRow>
             );
           })}
         </TableBody>
       </Table>
     </Paper>
+    <Typography className={classes.text} component="p" variant="h6">
+          If you still have any questions, please call us +44-7871234567 or 
+          ask us a question <br/> in our 
+          <Button href="https://material-ui.com/demos/buttons/#text-buttons" className={classes.button}>
+              Instagram
+          </Button> or in our
+          <Button href="https://material-ui.com/demos/buttons/#text-buttons" className={classes.button}>
+          VKontakte
+          </Button>
+          .
+    </Typography>
+    </div>
   );
 }
 

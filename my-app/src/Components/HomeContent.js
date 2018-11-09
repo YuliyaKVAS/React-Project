@@ -14,10 +14,11 @@ import MyCard from './Card';
 const styles = {
   root: {
     width: '100%',
-    overflowX: 'hidden'
+    overflowX: 'hidden',
     //maxWidth: 800,
     //padding: '24px',
     //margin: 'auto',
+    marginBottom: 0
   },
   font:{
     color: 'white',
@@ -40,7 +41,8 @@ const styles = {
   },
   item:{
     marginTop:'32px',
-    justify: 'center'
+    justify: 'center',
+    marginBottom: 0
   },
   itemMaxWidth:{
     minWidth: '100%'
@@ -80,19 +82,30 @@ function Types(props) {
             />
           </Grid>
           <Grid item xs={6} className={classes.item}>
-            <MediaCard src={"/images/TexasRichardson_barberShop.jpg"} title={"hfhf"} description={"hd"} header={"nnd"}/>
+            <MediaCard src={"/images/TexasRichardson_barberShop.jpg"} 
+            title={"hfhf"} 
+            description={"hd"} 
+            header={"nnd"}/>
           </Grid>
           <Grid item sm={6} className={classes.item}>
-              <MediaCard src={"/images/barber.jpg"} title={"hfhf"} description={"hd"} header={"nnd"}/>
+              <MediaCard src={"/images/barber.jpg"} 
+              title={"hfhf"} 
+              description={"hd"} 
+              header={"nnd"}/>
           </Grid>
           <Grid item sm={6} className={classes.item}>
-              <MediaCard src={"/images/barber-img1.jpg"} title={"hfhf"} description={"hd"} header={"nnd"}/>
+              <MediaCard src={"/images/barber-img1.jpg"} 
+              title={"hfhf"} 
+              description={"hd"} 
+              header={"nnd"}/>
           </Grid>
 
+        
       </Grid>
       <Grid item sm={12} className={classes.item}>
         <MediaCard src={"/images/barber-img-2.jpg"} title={"hfhf"} description={"hd"} header={"nnd"}/>
       </Grid>
+      
     </div>
   );
 }
