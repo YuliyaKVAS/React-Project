@@ -95,4 +95,8 @@ function getCurrentUser() {
   return JSON.parse(localStorage.getItem('currentUser'));
 }
 
-export {createUser, signIn, getCurrentUser};
+function logOut(){
+  return localStorage.removeItem('currentUser');
+}
+
+export {createUser, signIn, getCurrentUser, logOut};

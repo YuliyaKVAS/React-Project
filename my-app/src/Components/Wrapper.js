@@ -13,8 +13,9 @@ import FormDialogReg from './DialogForm';
 import FormDialogAuto from './FormDialogAuto';
 import Footer from './Footer';
 import MyCard from './Card';
-import {getCurrentUser} from './../Helpers/users-api';
-
+import {getCurrentUser, logOut} from './../Helpers/users-api';
+import LogOutDialog from './LogOutDialog';
+import DefineLogButtons from './DefineLogButtons';
 
 
 const styles = theme => ({
@@ -66,8 +67,10 @@ class Wrapper extends React.Component{
       <Grid item xs={12}>          
           <NavTab value={this.state.value} handleChange={this.handleChange}/>
           {this.state.currentUser && <h2 style={{color: 'white'}}>Hello, {this.state.currentUser.name}</h2>}
-          <FormDialogReg currentUser={this.state.currentUseruser}/>
+          {/*<FormDialogReg currentUser={this.state.currentUser}/>
           <FormDialogAuto setCurrentUser={this.setCurrentUser}/>
+           <LogOutDialog />*/}
+           <DefineLogButtons setCurrentUser={this.setCurrentUser} currentUser={this.state.currentUser}/>
           <DefineContent value={this.state.value}/>
           <Footer />
       </Grid>
