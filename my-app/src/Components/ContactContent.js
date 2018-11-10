@@ -27,7 +27,7 @@ function ContactContent(props){
   const {classes} = props;
   return(
     <div>
-      <Grid Grid container spasing={24} style={{background:'black'}}>
+      <Grid Grid container spasing={24} style={{background:'rgba(0,0,255,0.1)'}}>
         <Grid item sm={12} className={classes.grid}>
               <Typography variant ='h3' component="h5" className={classes.text}>
                 Where you can find us
@@ -43,7 +43,7 @@ function ContactContent(props){
           header={"Title"}
         />
         </Grid>
-        <Grid item sm={4} className={classes.grid}>
+        <Grid item sm={6} className={classes.grid}>
                 <Typography variant ='h4' component="h5" className={classes.text} >
                     Our address:
                 </Typography>
@@ -62,7 +62,7 @@ function ContactContent(props){
             header={"Title"}
           />
         </Grid>
-        <Grid item sm={4} className={classes.grid}>
+        <Grid item sm={6} className={classes.grid}>
         <Typography component="p" variant="h6" className={classes.text}>
             The nearest metro station is Aldgate East<br/>
             turn left when exiting the metro<br />

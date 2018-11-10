@@ -51,10 +51,15 @@ const styles = {
     minWidth: '100%'
   },
   text:{
-    marginLeft: '36px',
-    marginBottom: '36px',
+    marginLeft: '48px',
+    marginBottom: '48px',
+    marginRight: '48px',
     margin: 'auto',
     color: "#F9FBE7"
+  },
+  block:{
+    background: 'rgba(255,255,125,0.2)',
+    margin: 'auto'
   }
 
 };
@@ -70,9 +75,26 @@ function Types(props) {
         <Typography variant='h1' component="h3" className={classes.text}>barbershop</Typography>
       </Grid>
 
-          <Grid item xs={12} className={classes.item}>
-            <Accordeon />
-          </Grid>
+      <Grid item sm={12}>
+      <div className={classes.block}>
+      <Typography paragraph component='p' variant="h6" className={classes.text}>
+              Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over medium-high
+              heat. Add chicken, shrimp and chorizo, and cook, stirring occasionally until lightly
+              browned, 6 to 8 minutes. Transfer shrimp to a large plate and set aside, leaving
+              chicken and chorizo in the pan. Add pimentón, bay leaves, garlic, tomatoes, onion,
+              salt and pepper, and cook, stirring often until thickened and fragrant, about 10
+              minutes. Add saffron broth and remaining 4 1/2 cups chicken broth; bring to a boil.
+            </Typography>
+            <Typography paragraph component='p' variant="h6" className={classes.text}>
+              Add rice and stir very gently to distribute. Top with artichokes and peppers, and cook
+              without stirring, until most of the liquid is absorbed, 15 to 18 minutes. Reduce heat
+              to medium-low, add reserved shrimp and mussels, tucking them down into the rice, and
+              cook again without stirring, until mussels have opened and rice is just tender, 5 to 7
+              minutes more. (Discard any mussels that don’t <a href="contuct">open.</a>)
+            </Typography>
+            </div> 
+      </Grid>
+          
           
           <Grid item xs={6} className={classes.item}>
               <MediaCard src={"/images/barber.jpg"} 
@@ -86,12 +108,15 @@ function Types(props) {
               description={"hd"} 
               header={"nnd"}/>
           </Grid>
+          <Grid item xs={12} className={classes.item}>
+            <Accordeon />
+          </Grid>
 
         
       </Grid>
-      <Grid item sm={12} className={classes.item}>
-        <MediaCard src={"/images/barber-img-2.jpg"} title={"hfhf"} description={"hd"} header={"nnd"}/>
-      </Grid>
+      
+
+      
       
     </div>
   );

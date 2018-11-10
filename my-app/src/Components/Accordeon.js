@@ -6,7 +6,7 @@ import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-
+import grey from '@material-ui/core/colors/red';
 const styles = theme => ({
   root: {
     width: '90%',
@@ -15,16 +15,31 @@ const styles = theme => ({
   heading: {
     fontSize: theme.typography.pxToRem(15),
     fontWeight: theme.typography.fontWeightRegular,
+    color: '#FAFAFA',
   },
+  panel:{
+    backgroundColor: "#9E9E9E"
+  },
+  text:{
+    color: '#FAFAFA',
+    fontSize: theme.typography.pxToRem(15),
+    fontWeight: theme.typography.fontWeightRegular,
+
+  }
 });
 
 function Accordeon(props) {
   const { classes } = props;
   return (
     <div className={classes.root}>
-      <ExpansionPanel>
+      <ExpansionPanel disabled>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography className={classes.heading}>Expansion Panel 1</Typography>
+          <Typography className={classes.heading}>Frequently asked Questions</Typography>
+        </ExpansionPanelSummary>
+      </ExpansionPanel>
+      <ExpansionPanel className={classes.panel}>
+        <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+          <Typography className={classes.heading}></Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>
@@ -33,7 +48,7 @@ function Accordeon(props) {
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
-      <ExpansionPanel>
+      <ExpansionPanel className={classes.panel}>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
           <Typography className={classes.heading}>Expansion Panel 2</Typography>
         </ExpansionPanelSummary>
@@ -44,11 +59,7 @@ function Accordeon(props) {
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
-      <ExpansionPanel disabled>
-        <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography className={classes.heading}>Disabled Expansion Panel</Typography>
-        </ExpansionPanelSummary>
-      </ExpansionPanel>
+      
     </div>
   );
 }

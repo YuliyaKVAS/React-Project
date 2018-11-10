@@ -14,6 +14,7 @@ import AboutUsContent from './AboutUsContent';
 import ContactContent from './ContactContent';
 import RecipeReviewCard from './MyProfile';
 import MyProfile from './MyProfile';
+import CustomizedTable from './CustomizedTable';
 
 function TabContainer(props) {
   return (
@@ -45,7 +46,7 @@ class DefineContent extends React.Component{
       return <AboutUsContent />
     }
     if(value===2){
-      return <ServicesContent />
+      return <CustomizedTable />
     }
     if(value===3){
       return <ContactContent />

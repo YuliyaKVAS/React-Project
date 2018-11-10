@@ -8,9 +8,9 @@ import Button from '@material-ui/core/Button';
 const styles = theme => ({
   root: {
     flexGrow: 1,
-    marginTop: 30,
-    backgroundColor: "rgba(0, 0, 155, 0.19)",
-    borderTop: 'solid 3px #827717',
+    //marginTop: 30,
+    backgroundColor: "rgba(255, 125, 255, 0.19)",
+    borderTop: 'solid 1px #827717',
     paddingTop: '16px',
     overflowX: 'hidden',
     overflowY: 'hidden',

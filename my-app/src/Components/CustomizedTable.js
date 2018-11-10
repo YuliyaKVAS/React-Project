@@ -9,6 +9,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
 const CustomTableCell = withStyles(theme => ({
   head: {
     backgroundColor: theme.palette.primary,
@@ -25,10 +26,17 @@ const CustomTableCell = withStyles(theme => ({
 const styles = theme => ({
   root: {
     width: '100%',
-    marginTop: theme.spacing.unit * 3,
+    marginBottom: '32px',
     overflowX: 'auto',
-    margin: 'auto',
+    //margin: 'auto',
   },
+  item:{
+    marginTop:'32px',
+    justify: 'center',
+    margin: 'auto',
+    padding: '2px',
+  },
+  
   table: {
     minWidth: 700,
     margin: 'auto',
@@ -71,7 +79,9 @@ function CustomizedTable(props) {
   const { classes } = props;
 
   return (
-    <div>
+    <div className={classes.root}>
+    <Grid  container spasing={24} style={{background:'rgba(0,0,255,0.1)'}} >
+    <Grid item sm={12} className={classes.item}>
     <Typography component="h3" variant="h5" className={classes.text}>  
           You can find information about the cost of services in our salon below:
     </Typography>
@@ -108,6 +118,8 @@ function CustomizedTable(props) {
           </Button>
           .
     </Typography>
+    </Grid>
+    </Grid>
     </div>
   );
 }

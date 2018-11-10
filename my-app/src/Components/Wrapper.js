@@ -18,6 +18,7 @@ import LogOutDialog from './LogOutDialog';
 import DefineLogButtons from './DefineLogButtons';
 
 
+
 const styles = theme => ({
   root: {
     flexGrow: 1,
@@ -67,7 +68,7 @@ class Wrapper extends React.Component{
 //  const {classes} = props;
 
   return (
-      <Grid container spasing={24} style={{background:'black'}} >
+      <Grid container spasing={24} style={{background:'#424242'}} >
       <Grid item xs={12}>          
           <NavTab value={this.state.value} handleChange={this.handleChange} currentUser={this.state.currentUser}/>
           {this.state.currentUser && <h2 style={{color: 'white'}}>Hello, {this.state.currentUser.name}</h2>}
