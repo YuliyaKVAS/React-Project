@@ -1,15 +1,52 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
+import { withStyles } from '@material-ui/core/styles';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import InputLabel from '@material-ui/core/InputLabel';
+import Input from '@material-ui/core/Input';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 
-export default class FormDialog extends React.Component {
+const styles = theme => ({
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  formControl: {
+    margin: theme.spacing.unit,
+    minWidth: 120,
+  },
+});
+
+const dayOptions = ['10:00',
+                    '10:30',
+                    '11:00',
+                    '11:30',
+                    '12:00',
+                    '12:30',
+                    '14:00',
+                    '14:30',
+                    '15:00',
+                    '15:30',  
+                    '16:00',
+                    '17:00',
+                    '18:00',
+                    '18:30',
+                    '19:00']
+
+class DialogSelect extends React.Component {
   state = {
     open: false,
+    age: '',
+  };
+
+  handleChange = name => event => {
+    this.setState({ [name]: Number(event.target.value) });
   };
 
   handleClickOpen = () => {
@@ -21,51 +58,54 @@ export default class FormDialog extends React.Component {
   };
 
   render() {
+    const { classes } = this.props;
+
     return (
       <div>
-        <Button onClick={this.handleClickOpen}>Open form dialog</Button>
+        <Button onClick={this.handleClickOpen}>Open select dialog</Button>
         <Dialog
+          disableBackdropClick
+          disableEscapeKeyDown
           open={this.state.open}
           onClose={this.handleClose}
-          aria-labelledby="form-dialog-title"
         >
-          <DialogTitle id="form-dialog-title">Subscribe</DialogTitle>
+          <DialogTitle>Fill the form</DialogTitle>
           <DialogContent>
-            <DialogContentText>
-              To subscribe to this website, please enter your email address here. We will send
-              updates occasionally.
-            </DialogContentText>
-            
-                 <TextField
-                        id="date"
-                        label="Birthday"
-                         type="date"
-                        defaultValue="2017-05-24"
-                        
-                        InputLabelProps={{
-                        shrink: true,
-                        }}
-                />
-                <TextField
-        id="time"
-        label="Alarm clock"
-        type="time"
-        defaultValue="07:30"
-        
-        InputLabelProps={{
-          shrink: true,
-        }}
-        inputProps={{
-          step: 300, // 5 min
-        }}
-      />
+            <form className={classes.container}>
+              <FormControl className={classes.formControl}>
+                <InputLabel htmlFor="age-native-simple">Age</InputLabel>
+                <Select
+                  native
+                  value={this.state.age}
+                  onChange={this.handleChange('age')}
+                  input={<Input id="age-native-simple" />}
+                >
+                  {dayOptions.map((item) => (<option>{item}</option>))}
+                </Select>
+              </FormControl>
+              <FormControl className={classes.formControl}>
+                <InputLabel htmlFor="age-simple">Age</InputLabel>
+                <Select
+                  value={this.state.age}
+                  onChange={this.handleChange('age')}
+                  input={<Input id="age-simple" />}
+                >
+                  <MenuItem value="">
+                    <em>None</em>
+                  </MenuItem>
+                  <MenuItem value={10}>Ten</MenuItem>
+                  <MenuItem value={20}>Twenty</MenuItem>
+                  <MenuItem value={30}>Thirty</MenuItem>
+                </Select>
+              </FormControl>
+            </form>
           </DialogContent>
           <DialogActions>
             <Button onClick={this.handleClose} color="primary">
               Cancel
             </Button>
             <Button onClick={this.handleClose} color="primary">
-              Subscribe
+              Ok
             </Button>
           </DialogActions>
         </Dialog>
@@ -73,3 +113,10 @@ export default class FormDialog extends React.Component {
     );
   }
 }
+
+DialogSelect.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(DialogSelect);
+

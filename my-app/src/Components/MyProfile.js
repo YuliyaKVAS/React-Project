@@ -3,7 +3,8 @@ import React from 'react';
 import DatePicker from './DatePicker';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import FormDialog from './Date&TymeForm'
+import DialogSelect from './Date&TymeForm'
+
 
 
 const styles = theme => ({
@@ -28,8 +29,7 @@ const {classes} = props;
     <div className={classes.root}>
       <Grid container spasing={24} style={{background:'rgba(0,0,255,0.1)'}}>
         <Grid item sm={12} className={classes.item}>
-            <DatePicker />
-            <FormDialog />
+        <DialogSelect />
         </Grid>
       </Grid>
     </div>
