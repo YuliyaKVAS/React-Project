@@ -2,7 +2,9 @@ import {getCurrentUser} from './users-api';
 const reserveUser = (day, time) => {
     const currentUserEmail = getCurrentUser().email;
     const currentUserName = getCurrentUser().name;
-    const currentUserPassword = getCurrentUser().password;
+    const currentUserPassword = JSON.parse(localStorage.getItem(currentUserEmail)).password;
+    console.log("Current user obj: " + (localStorage.getItem("currentUser")))
+    console.log("Current password: " + currentUserPassword);
     const reservedDates = JSON.parse(localStorage.getItem(currentUserEmail)).reserves;
     reservedDates.push({date: day, time: time});
     const updatedUserValue = {
@@ -15,13 +17,13 @@ const reserveUser = (day, time) => {
 
 }
 
-const deleteReservedTime = (options, index, time_index) => {
+const deleteReservedTime = (options, index, time) => {
     console.log("times array: " + options[index].times)
     if(options[index].times.length===1){
         options.splice(index,1);
         return
     }else{
-        options[index].times.splice(time_index,1);
+        options[index].times.splice(time,1);
         return
     }
 }

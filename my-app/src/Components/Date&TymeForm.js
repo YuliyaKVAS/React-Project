@@ -54,7 +54,6 @@ class SelectDialog extends React.Component{
   }
   handleSubmitTime = () => {
     reserveUser(options[this.state.date].date, options[this.state.date].times[this.state.time]);
-    console.log("current time index: " + this.state.time);
     deleteReservedTime(options, this.state.date, this.state.time);
     this.setState({isSubDialogOpen: false});
     this.setState({open: false});
@@ -62,8 +61,8 @@ class SelectDialog extends React.Component{
 
 
   render(){
-    console.log("this.state.date: "+this.state.date);
-    console.log("this.state.time: "+this.state.time);
+    // console.log("this.state.date: "+this.state.date);
+    // console.log("this.state.time: "+this.state.time);
     if(this.state.isSubDialogOpen){
       return(
         <div>
