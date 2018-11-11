@@ -1,15 +1,19 @@
-const dayOptions = ['10:00',
-                    '10:30',
-                    '11:00',
-                    '11:30',
-                    '12:00',
-                    '12:30',
-                    '14:00',
-                    '14:30',
-                    '15:00',
-                    '15:30',  
-                    '16:00',
-                    '17:00',
-                    '18:00',
-                    '18:30',
-                    '19:00']
+
+function createDates(){
+    let today = new Date();
+    let times = ['10:00', '11:00', '12:00', '14:00'];
+    let options = [];
+    for (let i = 0; i < 7; i++) {
+        today.setDate(today.getDate() + 1);
+        options.push({
+            date : today.getDate() + "/" + 
+                   today.getMonth() + "/" + 
+                   today.getFullYear(),
+            times: times.slice()
+                });
+    }
+
+    return options;
+}
+
+export default createDates;

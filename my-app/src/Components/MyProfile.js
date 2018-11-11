@@ -1,9 +1,8 @@
 import Grid from '@material-ui/core/Grid';
 import React from 'react';
-import DatePicker from './DatePicker';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import DialogSelect from './Date&TymeForm'
+import SelectDialog from './Date&TymeForm'
 
 
 
@@ -29,7 +28,8 @@ const {classes} = props;
     <div className={classes.root}>
       <Grid container spasing={24} style={{background:'rgba(0,0,255,0.1)'}}>
         <Grid item sm={12} className={classes.item}>
-        <DialogSelect />
+        <SelectDialog />
+        <h1>You have reservation at </h1>
         </Grid>
       </Grid>
     </div>

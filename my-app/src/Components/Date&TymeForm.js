@@ -11,112 +11,126 @@ import Input from '@material-ui/core/Input';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+import createDates from './../Helpers/dayAndTimeData';
+import {reserveUser, deleteReservedTime} from '../Helpers/reserveUser';
 
-const styles = theme => ({
-  container: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-  formControl: {
-    margin: theme.spacing.unit,
-    minWidth: 120,
-  },
-});
 
-const dayOptions = ['10:00',
-                    '10:30',
-                    '11:00',
-                    '11:30',
-                    '12:00',
-                    '12:30',
-                    '14:00',
-                    '14:30',
-                    '15:00',
-                    '15:30',  
-                    '16:00',
-                    '17:00',
-                    '18:00',
-                    '18:30',
-                    '19:00']
 
-class DialogSelect extends React.Component {
+
+const options = createDates();
+
+class SelectDialog extends React.Component{
   state = {
     open: false,
-    age: '',
-  };
+    isSubDialogOpen: false,
+    date: '',
+    time: '',
+  }
 
-  handleChange = name => event => {
-    this.setState({ [name]: Number(event.target.value) });
-  };
+
 
   handleClickOpen = () => {
-    this.setState({ open: true });
+    this.setState({open: true});
   };
 
-  handleClose = () => {
-    this.setState({ open: false });
+  handleClickClose = () => {
+    this.setState({open: false});
   };
 
-  render() {
-    const { classes } = this.props;
+  handleChangeDate = (event) => {
+    this.setState({date: Number(event.target.value)})
+  };
 
-    return (
+  handleChangeTime = (event) => {
+    this.setState({time: (event.target.value)})
+  }
+
+  handleClickSubDialogOpen = () => {
+    this.setState({isSubDialogOpen:true})
+  };
+
+  handleCloseSubDialog = () => {
+    this.setState({isSubDialogOpen:false});
+  }
+  handleSubmitTime = () => {
+    reserveUser(options[this.state.date].date, options[this.state.date].times[this.state.time]);
+    console.log("current time index: " + this.state.time);
+    deleteReservedTime(options, this.state.date, this.state.time);
+    this.setState({isSubDialogOpen: false});
+    this.setState({open: false});
+  }
+
+
+  render(){
+    console.log("this.state.date: "+this.state.date);
+    console.log("this.state.time: "+this.state.time);
+    if(this.state.isSubDialogOpen){
+      return(
+        <div>
+          <Dialog
+            open={this.state.isSubDialogOpen}
+            onClose = {this.handleCloseSubDialog}
+          >
+            <DialogTitle>Please, choose the time</DialogTitle>
+            <DialogContent>
+              <form>
+                <FormControl>
+                  <InputLabel htmlFor="time-native-simple">Time</InputLabel>
+                  <Select
+                    native
+                    value={this.state.time}
+                    onChange={this.handleChangeTime}
+                    input={<Input id="time-native-simple"/>}
+                  > 
+                    <option value="" />
+                    {options[this.state.date].times.map((item, j) => (<option value={j++}>{item}</option>))}
+                  </Select>
+                </FormControl>
+              </form>
+            </DialogContent>
+            <DialogActions>
+              <Button onClick={this.handleSubmitTime} color="primary">Reserve</Button>
+              <Button onClick={this.handleCloseSubDialog} color="secondary">Close</Button>
+            </DialogActions>
+          </Dialog>
+        </div>
+      )
+    }
+    return(
       <div>
-        <Button onClick={this.handleClickOpen}>Open select dialog</Button>
+        <Button onClick={this.handleClickOpen}>Select Data</Button>
         <Dialog
-          disableBackdropClick
-          disableEscapeKeyDown
           open={this.state.open}
-          onClose={this.handleClose}
+          onClose = {this.handleClickClose}
         >
-          <DialogTitle>Fill the form</DialogTitle>
+          <DialogTitle>Please, choose the date</DialogTitle>
           <DialogContent>
-            <form className={classes.container}>
-              <FormControl className={classes.formControl}>
-                <InputLabel htmlFor="age-native-simple">Age</InputLabel>
+            <form>
+              <FormControl>
+                <InputLabel htmlFor="age-native-simple">Date</InputLabel>
                 <Select
                   native
-                  value={this.state.age}
-                  onChange={this.handleChange('age')}
-                  input={<Input id="age-native-simple" />}
+                  value={this.state.date}
+                  onChange = {this.handleChangeDate}
+                  input={<Input id ="age-native-simple"/>}
                 >
-                  {dayOptions.map((item) => (<option>{item}</option>))}
-                </Select>
-              </FormControl>
-              <FormControl className={classes.formControl}>
-                <InputLabel htmlFor="age-simple">Age</InputLabel>
-                <Select
-                  value={this.state.age}
-                  onChange={this.handleChange('age')}
-                  input={<Input id="age-simple" />}
-                >
-                  <MenuItem value="">
-                    <em>None</em>
-                  </MenuItem>
-                  <MenuItem value={10}>Ten</MenuItem>
-                  <MenuItem value={20}>Twenty</MenuItem>
-                  <MenuItem value={30}>Thirty</MenuItem>
+                  <option value="" />
+                  {options.map((item,i) => (<option value={i++}>{item.date}</option>))}
                 </Select>
               </FormControl>
             </form>
           </DialogContent>
           <DialogActions>
-            <Button onClick={this.handleClose} color="primary">
-              Cancel
-            </Button>
-            <Button onClick={this.handleClose} color="primary">
-              Ok
-            </Button>
+            <Button onClick={this.handleClickSubDialogOpen} color="primary">Confirm Data</Button>
+            <Button onClick={this.handleClickClose} color="secondary">Cancel</Button>
           </DialogActions>
+
         </Dialog>
       </div>
-    );
+    )
   }
+
+
 }
 
-DialogSelect.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
-
-export default withStyles(styles)(DialogSelect);
-
+export default SelectDialog;

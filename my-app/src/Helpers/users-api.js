@@ -1,3 +1,5 @@
+import { func } from "prop-types";
+
   const users = [];
 
   const createUser = ({name, email, password, repeatPassword}) => {
@@ -29,7 +31,8 @@
     //  users.push(user);
     let newUser = {
       name: name,
-      password: password
+      password: password,
+      reserves:[]
     }
     localStorage.setItem(email, JSON.stringify(newUser));
       return{
