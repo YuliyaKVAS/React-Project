@@ -17,7 +17,7 @@ import {reserveUser, deleteReservedTime} from '../Helpers/reserveUser';
 
 
 
-const options = createDates();
+//const options = createDates();
 
 class SelectDialog extends React.Component{
   state = {
@@ -25,9 +25,12 @@ class SelectDialog extends React.Component{
     isSubDialogOpen: false,
     date: '',
     time: '',
+    options: createDates()
   }
 
-
+  /*componentDidMount(){
+    this.setState({options: createDates()})
+  }*/
 
   handleClickOpen = () => {
     this.setState({open: true});
@@ -53,8 +56,8 @@ class SelectDialog extends React.Component{
     this.setState({isSubDialogOpen:false});
   }
   handleSubmitTime = () => {
-    reserveUser(options[this.state.date].date, options[this.state.date].times[this.state.time]);
-    deleteReservedTime(options, this.state.date, this.state.time);
+    reserveUser(this.state.options[this.state.date].date, this.state.options[this.state.date].times[this.state.time]);
+    deleteReservedTime(this.state.options, this.state.date, this.state.time);
     this.setState({isSubDialogOpen: false});
     this.setState({open: false});
   }
@@ -82,7 +85,7 @@ class SelectDialog extends React.Component{
                     input={<Input id="time-native-simple"/>}
                   > 
                     <option value="" />
-                    {options[this.state.date].times.map((item, j) => (<option value={j++}>{item}</option>))}
+                    {this.state.options[this.state.date].times.map((item, j) => (<option value={j++}>{item}</option>))}
                   </Select>
                 </FormControl>
               </form>
@@ -114,7 +117,7 @@ class SelectDialog extends React.Component{
                   input={<Input id ="age-native-simple"/>}
                 >
                   <option value="" />
-                  {options.map((item,i) => (<option value={i++}>{item.date}</option>))}
+                  {this.state.options.map((item,i) => (<option value={i++}>{item.date}</option>))}
                 </Select>
               </FormControl>
             </form>
