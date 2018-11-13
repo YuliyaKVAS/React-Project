@@ -92,8 +92,7 @@ handleUserExistsClose = () =>{
       <DialogTitle id="form-dialog-title">Welcome, {this.state.name}</DialogTitle>
       <DialogContent>
         <DialogContentText>
-          To subscribe to this website, please enter your email address here. We will send
-          updates occasionally.
+          Congratulations! You have registered! now you can sign in
         </DialogContentText>
         </DialogContent>
         <Button onClick={this.handleSubDialogClose} color="secondary" variant="outlined">
