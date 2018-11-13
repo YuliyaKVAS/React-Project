@@ -6,7 +6,7 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import {createUser, signIn} from './../Helpers/users-api';
+import {signIn} from './../Helpers/users-api';
 
 
 export default class FormDialogAuto extends React.Component {
@@ -106,7 +106,7 @@ export default class FormDialogAuto extends React.Component {
         onClose={this.handleNoUserClose}
         aria-labelledby="form-dialog-title"
       >
-      <DialogTitle id="form-dialog-title">Sorry, something has gone wrong 🤕.</DialogTitle>
+      <DialogTitle id="form-dialog-title">Sorry, something has gone wrong <span role="img" aria-labelledby="img">🤕</span>.</DialogTitle>
       <DialogContent>
         <DialogContentText>
           No such user exists!
@@ -124,7 +124,7 @@ export default class FormDialogAuto extends React.Component {
         onClose={this.handleWrongPassClose}
         aria-labelledby="form-dialog-title"
       >
-      <DialogTitle id="form-dialog-title">Sorry, something has gone wrong 🤕.</DialogTitle>
+      <DialogTitle id="form-dialog-title">Sorry, something has gone wrong <span role="img" aria-labelledby="img">🤕</span>.</DialogTitle>
       <DialogContent>
         <DialogContentText>
           Wrong Password!

@@ -25,7 +25,6 @@ function ServicesContent(props){
   const {classes} = props;
   return(
     <div className={classes.root}>
-      
       <PriceTable />
     </div>
   );

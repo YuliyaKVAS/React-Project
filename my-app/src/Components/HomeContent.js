@@ -6,7 +6,7 @@ import MediaCard from './Images';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Card from '@material-ui/core/Card';
-import FormDialogReg from './DialogForm';
+import RegistrationForm from './RegistrationForm';
 import FormDialogAuto from './FormDialogAuto';
 import CardContent from '@material-ui/core/CardContent';
 import MyCard from './Card';

@@ -6,12 +6,11 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import {createUser, signIn} from './../Helpers/users-api';
-import CreateSomething from './CreateSomething';
-import {regexpEmail, regexpPassword} from './../Helpers/regExps';
+import {createUser} from '../Helpers/users-api';
+import {regexpEmail, regexpPassword} from '../Helpers/regExps';
 
 
-export default class FormDialogReg extends React.Component {
+export default class RegistrationForm extends React.Component {
   state = {
     open: false,
     name: '',
@@ -96,7 +95,6 @@ handleUserExistsClose = () =>{
           To subscribe to this website, please enter your email address here. We will send
           updates occasionally.
         </DialogContentText>
-        //<CreateSomething/>
         </DialogContent>
         <Button onClick={this.handleSubDialogClose} color="secondary" variant="outlined">
           Close
@@ -110,7 +108,7 @@ handleUserExistsClose = () =>{
         onClose={this.handleErrFillClose}
         aria-labelledby="form-dialog-title"
       >
-      <DialogTitle id="form-dialog-title">Something has gone wrong 🤕</DialogTitle>
+      <DialogTitle id="form-dialog-title">Something has gone wrong <span role="img" aria-labelledby="img">🤕</span></DialogTitle>
       <DialogContent>
         <DialogContentText>
         Please fill in all fields correctly
@@ -128,7 +126,7 @@ handleUserExistsClose = () =>{
         onClose={this.handleUserExistsClose}
         aria-labelledby="form-dialog-title"
       >
-      <DialogTitle id="form-dialog-title">Something has gone wrong 🤕</DialogTitle>
+      <DialogTitle id="form-dialog-title">Something has gone wrong <span role="img" aria-labelledby="img">🤕</span></DialogTitle>
       <DialogContent>
         <DialogContentText>
           User already exists!
@@ -146,10 +144,10 @@ handleUserExistsClose = () =>{
         onClose={this.handleWrongPassClose}
         aria-labelledby="form-dialog-title"
       >
-      <DialogTitle id="form-dialog-title">Something has gone wrong 🤕</DialogTitle>
+      <DialogTitle id="form-dialog-title">Something has gone wrong <span role="img" aria-labelledby="img">🤕</span></DialogTitle>
       <DialogContent>
         <DialogContentText>
-          Wrong password! 🤦‍♂
+          Wrong password! <span role="img" aria-labelledby="img">🤕</span>
         </DialogContentText>
         </DialogContent>
         <Button onClick={this.handleWrongPassClose} color="secondary" variant="outlined">
