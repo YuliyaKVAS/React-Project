@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
-import CustomizedTable from './CustomizedTable';
+import PriceTable from './PriceTable';
 import Grid from '@material-ui/core/Grid';
 
 const styles = {
@@ -26,7 +26,7 @@ function ServicesContent(props){
   return(
     <div className={classes.root}>
       
-      <CustomizedTable />
+      <PriceTable />
     </div>
   );
 }

@@ -10,10 +10,10 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
+
 const CustomTableCell = withStyles(theme => ({
   head: {
     backgroundColor: theme.palette.primary,
-    color: theme.palette.common.black,
     fontSize: 18,
     weight: 800,
     color: 'darkblue'
@@ -28,7 +28,6 @@ const styles = theme => ({
     width: '100%',
     marginBottom: '32px',
     overflowX: 'auto',
-    //margin: 'auto',
   },
   item:{
     marginTop:'32px',
@@ -75,7 +74,7 @@ const rows = [
   createData('manicure', '17,10 £'),
 ];
 
-function CustomizedTable(props) {
+function PriceTable(props) {
   const { classes } = props;
 
   return (
@@ -110,10 +109,10 @@ function CustomizedTable(props) {
     <Typography className={classes.text} component="p" variant="h6">
           If you still have any questions, please call us +44-7871234567 or 
           ask us a question <br/> in our 
-          <Button href="https://material-ui.com/demos/buttons/#text-buttons" className={classes.button}>
+          <Button href="https://www.instagram.com/yuliya_donut/?hl=bn" className={classes.button}>
               Instagram
           </Button> or in our
-          <Button href="https://material-ui.com/demos/buttons/#text-buttons" className={classes.button}>
+          <Button href="https://vk.com/id154603815" className={classes.button}>
           VKontakte
           </Button>
           .
@@ -124,8 +123,8 @@ function CustomizedTable(props) {
   );
 }
 
-CustomizedTable.propTypes = {
+PriceTable.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(CustomizedTable);
+export default withStyles(styles)(PriceTable);
