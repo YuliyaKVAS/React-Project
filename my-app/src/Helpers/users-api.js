@@ -1,15 +1,9 @@
-import { func } from "prop-types";
+
 import { regexpEmail, regexpPassword } from "./regExps";
 
-  const users = [];
 
   const createUser = ({name, email, password, repeatPassword}) => {
 
-    const user = {
-      name: name,
-      email: email,
-      password: password
-    }
     if(!email.match(regexpEmail) || !password.match(regexpPassword) || repeatPassword.length===0 || name.length===0){
       return{
         isUserCreated: false,
@@ -49,10 +43,6 @@ import { regexpEmail, regexpPassword } from "./regExps";
 
 
 const signIn = ({email, password}) => {
-  const user = {
-    email: email,
-    password: password
-  }
 
   if(email.length === 0 || password.length === 0){
 
@@ -69,7 +59,7 @@ const signIn = ({email, password}) => {
     }
   }
 
-  else if(localStorage.getItem(email)!==null && password!=JSON.parse(localStorage.getItem(email)).password){
+  else if(localStorage.getItem(email)!==null && password!==JSON.parse(localStorage.getItem(email)).password){
 
     return {
        isSignIn: false,

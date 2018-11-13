@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import NavTab from './NavTab';
 import DefineContent from './DefineContent';
@@ -8,7 +8,7 @@ import DefineLogButtons from './DefineLogButtons';
 
 
 
-const styles = theme => ({
+/*const styles = theme => ({
   root: {
     flexGrow: 1,
     overflowX: 'hidden'
@@ -16,7 +16,7 @@ const styles = theme => ({
   grid:{
     background: 'red',
   }
-});
+});*/
 
 class Wrapper extends React.Component{
   constructor(props){
