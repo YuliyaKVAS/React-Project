@@ -1,4 +1,5 @@
 import { func } from "prop-types";
+import { regexpEmail, regexpPassword } from "./regExps";
 
   const users = [];
 
@@ -9,10 +10,10 @@ import { func } from "prop-types";
       email: email,
       password: password
     }
-    if(email.length===0 || password.length===0 || repeatPassword.length===0 || name.length===0){
+    if(!email.match(regexpEmail) || !password.match(regexpPassword) || repeatPassword.length===0 || name.length===0){
       return{
         isUserCreated: false,
-        errorMsg: 'All inputs should be'
+        errorMsg: 'Please fill in all fields correctly'
       }
     }
     if(password!==repeatPassword){

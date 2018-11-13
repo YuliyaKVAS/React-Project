@@ -24,7 +24,7 @@ const styles = {
     dialog:{
         display: "flex",
         justify: 'center',
-    }
+    },
 }
 
 class DropDownDialog extends React.Component{

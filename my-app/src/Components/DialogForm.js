@@ -8,6 +8,8 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import {createUser, signIn} from './../Helpers/users-api';
 import CreateSomething from './CreateSomething';
+import {regexpEmail, regexpPassword} from './../Helpers/regExps';
+
 
 export default class FormDialogReg extends React.Component {
   state = {
@@ -19,7 +21,7 @@ export default class FormDialogReg extends React.Component {
     isSuccessfullRegistrationDialogOpen: false,
     isSuchUserExistsOpen: false,
     isWrongPassOpen: false,
-    isErrFillOpen: false
+    isErrFillOpen: false,
   };
   handleClickOpen = () => {
     this.setState({ open: true });
@@ -57,7 +59,7 @@ export default class FormDialogReg extends React.Component {
     this.setState({open: false, isSuccessfullRegistrationDialogOpen: true})
 
   }
-  else if(obj.errorMsg==="All inputs should be"){
+  else if(obj.errorMsg==="Please fill in all fields correctly"){
     this.setState({isErrFillOpen: true});
   }
   else if(obj.errorMsg ==="Password does't matches"){
@@ -111,7 +113,7 @@ handleUserExistsClose = () =>{
       <DialogTitle id="form-dialog-title">Something has gone wrong 🤕</DialogTitle>
       <DialogContent>
         <DialogContentText>
-        All fields must be filled!
+        Please fill in all fields correctly
         </DialogContentText>
         </DialogContent>
         <Button onClick={this.handleErrFillClose} color="secondary" variant="outlined">
@@ -179,6 +181,8 @@ handleUserExistsClose = () =>{
               fullWidth
               onChange={this.handleChangeName}
               value={this.state.name}
+              //error={false}
+              helperText="Your name"
             />
             <TextField
               //autoFocus
@@ -189,6 +193,8 @@ handleUserExistsClose = () =>{
               fullWidth
               onChange={this.handleChangeEmail}
               value={this.state.email}
+              error={!this.state.email.match(regexpEmail) && this.state.email.length!==0}
+              helperText="E-mail should be like example@gmail.com"
             />
             <TextField
               //autoFocus
@@ -199,6 +205,8 @@ handleUserExistsClose = () =>{
               fullWidth
               onChange={this.handleChangePassword}
               value={this.state.password}
+              error={!this.state.password.match(regexpPassword) && this.state.password.length!==0}
+              helperText="from 4 to 8 characters including at least 1 digit"
             />
             <TextField
               //autoFocus
@@ -209,6 +217,9 @@ handleUserExistsClose = () =>{
               fullWidth
               onChange={this.handleChangeRepeatPassword}
               value={this.state.repeatPassword}
+              error={this.state.password!==this.state.repeatPassword && this.state.repeatPassword.length!==0}
+              helperText="must match with password"
+              disabled={this.state.password.length===0}
             />
           </DialogContent>
           <DialogActions>
