@@ -1,6 +1,6 @@
 import React from 'react';
 import RegistrationForm from './RegistrationForm';
-import FormDialogAuto from './FormDialogAuto';
+import AuthorizationForm from './AuthorizationForm';
 import LogOutDialog from './LogOutDialog';
 
 class DefineLogButtons extends React.Component{
@@ -11,7 +11,7 @@ class DefineLogButtons extends React.Component{
         }else{
             return (<div>
                 <RegistrationForm />
-                <FormDialogAuto setCurrentUser={this.props.setCurrentUser}/>
+                <AuthorizationForm setCurrentUser={this.props.setCurrentUser}/>
             </div>)
         }
     }

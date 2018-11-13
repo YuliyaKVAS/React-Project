@@ -2,15 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
-import MediaCard from './Images';
+import MediaCard from './MediaCard';
 import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
-import Card from '@material-ui/core/Card';
-import RegistrationForm from './RegistrationForm';
-import FormDialogAuto from './FormDialogAuto';
-import CardContent from '@material-ui/core/CardContent';
-import MyCard from './Card';
-//import RecipeReviewCard from './MyProfile';
 import Accordeon from './Accordeon';
 
 const styles = {
@@ -64,7 +57,7 @@ const styles = {
 
 };
 
-function Types(props) {
+function HomeContent(props) {
   const { classes } = props;
 
   return (
@@ -122,8 +115,8 @@ function Types(props) {
   );
 }
 
-Types.propTypes = {
+HomeContent.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Types);
+export default withStyles(styles)(HomeContent);

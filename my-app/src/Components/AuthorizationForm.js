@@ -6,10 +6,10 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import {signIn} from './../Helpers/users-api';
+import {signIn} from '../Helpers/users-api';
 
 
-export default class FormDialogAuto extends React.Component {
+export default class AuthorizationForm extends React.Component {
   state = {
     open: false,
     name: '',
@@ -162,7 +162,6 @@ export default class FormDialogAuto extends React.Component {
               value={this.state.email}
             />
             <TextField
-              //autoFocus
               margin="dense"
               id="password"
               label="Password"

@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
@@ -52,37 +51,38 @@ class Footer extends React.Component{
       <Grid container spacing={0}>
         <Grid item xs={12} sm={4} className={classes.grid}>
           <Typography className={[classes.footerText, classes.footerSections]}>
-              Franciscan University of Steubenville
-                  <br/>1235 University Boulevard
-                  <br />Steubenville, Ohio
-                  <br/>43952
-                  <br/>(740) 283-3771
+            International beauty center
+                  <br/>25 Carnaby Street, off 78
+                  <br />LIVERPOOL
+                  <br/>NR32 4WY
+                  <br/>UK
+                  <br/>+44-7871234567
           </Typography>
         </Grid>
         <Grid item xs={12} sm={4} className={classes.grid}>
         <Typography className={[classes.footerText, classes.footerSections]}>
-            To find more information about MUI follow
+            To find more information about Barbershops follow
         </Typography>
-        <Button href="https://material-ui.com/style/color/" color="primary" variant="outlined">
+        <Button href="https://en.wikipedia.org/wiki/Barbershop" color="primary" variant="outlined">
             Link
         </Button>
         <Typography className={[classes.footerText, classes.footerSections]}>
-            To find more information about MUI follow
+            To find more information about history of the barbershop follow
         </Typography>
-        <Button href="https://material-ui.com/demos/buttons/#text-buttons" color="primary" variant="outlined">
+        <Button href="https://www.complex.com/style/2016/04/an-in-depth-look-at-an-american-staple-the-barbershop" color="primary" variant="outlined">
             Link
         </Button>
         </Grid>
 
         <Grid item xs={12} sm={4} className={classes.grid}>
-          <Button href="https://material-ui.com/demos/buttons/#text-buttons" className={classes.iconButton}>
-          <img
+          <Button href="https://www.instagram.com/yuliya_donut/?hl=bn" className={classes.iconButton}>
+          <img alt=" "
               src="/images/icons8-instagram-48.png"
           />
           </Button>
           <br/>
-          <Button href="https://material-ui.com/demos/buttons/#text-buttons" className={classes.iconButton}>
-          <img
+          <Button href="https://vk.com/id154603815" className={classes.iconButton}>
+          <img alt=" "
               src="/images/icons8-vk.com-48.png"
           />
           </Button>

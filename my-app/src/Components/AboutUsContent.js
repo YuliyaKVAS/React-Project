@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
-import MediaCard from './Images';
+import MediaCard from './MediaCard';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 const styles = {
