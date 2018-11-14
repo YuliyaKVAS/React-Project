@@ -2,7 +2,6 @@ import Grid from '@material-ui/core/Grid';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import SelectDialog from './Date&TymeForm';
 import ReserveForm from './ReserveForm';
 import Typography from '@material-ui/core/Typography';
 
@@ -42,7 +41,6 @@ const {classes} = props;
           </Typography>
         </Grid>
         <Grid item sm={12} className={classes.item}>
-        <SelectDialog />
         <ReserveForm />
         </Grid>
       </Grid>

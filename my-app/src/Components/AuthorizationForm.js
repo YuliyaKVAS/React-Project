@@ -94,7 +94,7 @@ export default class AuthorizationForm extends React.Component {
         All fields must be filled
         </DialogContentText>
       </DialogContent>
-        <Button onClick={this.handleErrFillClose} color="secondary" variant="outlined">
+        <Button onClick={this.handleErrFillClose} color="secondary" variant="text">
           Close
         </Button>
     </Dialog>
@@ -112,7 +112,7 @@ export default class AuthorizationForm extends React.Component {
           No such user exists!
         </DialogContentText>
       </DialogContent>
-        <Button onClick={this.handleNoUserClose} color="secondary" variant="outlined">
+        <Button onClick={this.handleNoUserClose} color="secondary" variant="text">
           Close
         </Button>
     </Dialog>
@@ -130,7 +130,7 @@ export default class AuthorizationForm extends React.Component {
           Wrong Password!
         </DialogContentText>
       </DialogContent>
-        <Button onClick={this.handleWrongPassClose} color="secondary" variant="outlined">
+        <Button onClick={this.handleWrongPassClose} color="secondary" variant="text">
           Close
         </Button>
     </Dialog>
@@ -148,8 +148,7 @@ export default class AuthorizationForm extends React.Component {
           <DialogTitle id="form-dialog-title">Autorization</DialogTitle>
           <DialogContent>
             <DialogContentText>
-              To subscribe to this website, please enter your email address here. We will send
-              updates occasionally.
+              Please, enter your e-mail and password for authorization
             </DialogContentText>
             <TextField
               autoFocus

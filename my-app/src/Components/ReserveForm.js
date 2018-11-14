@@ -95,12 +95,12 @@ class ReserveForm extends React.Component{
                             You should choose both date and time!
                         </DialogContentText>
                     </DialogContent>
-                    <Button onClick={this.handleErrorDialogClose} variant="outlined" color="secondary">Close</Button>
+                    <Button onClick={this.handleErrorDialogClose} variant="text" color="secondary">Close</Button>
                    </Dialog>
         }
         return(
-            <div className={classes.root}>
-                <Button onClick={this.handleClickOpen}>Select</Button>
+            <div style={{display: 'flex', justifyContent:"center"}}>
+                <Button onClick={this.handleClickOpen} variant="extendedFab" color="primary">Make an appointment</Button>
                 <Dialog
                   open={this.state.open}
                   onClose={this.handleClickClose}
@@ -136,8 +136,8 @@ class ReserveForm extends React.Component{
                             </FormControl>
                         </form>
                     </DialogContent>
-                <Button onClick={this.handleSubmitData} variant="outlined" color="primary">Make appointment</Button>
-                <Button onClick={this.handleClickClose} variant="outlined" color="secondary">Close</Button>    
+                <Button onClick={this.handleSubmitData} variant="text" color="primary">Make appointment</Button>
+                <Button onClick={this.handleClickClose} variant="text" color="secondary">Close</Button>    
                 </Dialog>
             </div>
         )

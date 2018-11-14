@@ -113,7 +113,7 @@ handleUserExistsClose = () =>{
         Please fill in all fields correctly
         </DialogContentText>
         </DialogContent>
-        <Button onClick={this.handleErrFillClose} color="secondary" variant="outlined">
+        <Button onClick={this.handleErrFillClose} color="secondary" variant="text">
           Close
         </Button>
       </Dialog>
@@ -131,7 +131,7 @@ handleUserExistsClose = () =>{
           User already exists!
         </DialogContentText>
         </DialogContent>
-        <Button onClick={this.handleUserExistsClose} color="secondary" variant="outlined">
+        <Button onClick={this.handleUserExistsClose} color="secondary" variant="text">
           Close
         </Button>
       </Dialog>
@@ -146,10 +146,10 @@ handleUserExistsClose = () =>{
       <DialogTitle id="form-dialog-title">Something has gone wrong <span role="img" aria-labelledby="img">🤕</span></DialogTitle>
       <DialogContent>
         <DialogContentText>
-          Wrong password! <span role="img" aria-labelledby="img">🤕</span>
+          Passwords doesn't match! <span role="img" aria-labelledby="img">🤕</span>
         </DialogContentText>
         </DialogContent>
-        <Button onClick={this.handleWrongPassClose} color="secondary" variant="outlined">
+        <Button onClick={this.handleWrongPassClose} color="secondary" variant="text">
           Close
         </Button>
       </Dialog>
