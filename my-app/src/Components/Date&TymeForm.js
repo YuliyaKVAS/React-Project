@@ -10,6 +10,7 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import createDates from './../Helpers/dayAndTimeData';
 import {reserveUser, deleteReservedTime} from '../Helpers/reserveUser';
+import { DialogContentText } from '@material-ui/core';
 
 
 
@@ -22,7 +23,9 @@ class SelectDialog extends React.Component{
     isSubDialogOpen: false,
     date: '',
     time: '',
-    options: createDates()
+    options: createDates(),
+    isDateNotFilledOpen:false,
+    isTimeNotFilledOpen: false
   }
 
   /*componentDidMount(){
@@ -46,17 +49,37 @@ class SelectDialog extends React.Component{
   }
 
   handleClickSubDialogOpen = () => {
-    this.setState({isSubDialogOpen:true})
+      if(this.state.date===''){
+        this.setState({isDateNotFilledOpen: true});
+      }else{
+        this.setState({isSubDialogOpen:true})
+      }
+      
   };
 
   handleCloseSubDialog = () => {
     this.setState({isSubDialogOpen:false});
   }
   handleSubmitTime = () => {
-    reserveUser(this.state.options[this.state.date].date, this.state.options[this.state.date].times[this.state.time]);
-    deleteReservedTime(this.state.options, this.state.date, this.state.time);
-    this.setState({isSubDialogOpen: false});
-    this.setState({open: false});
+    if(this.state.time===""){
+      this.setState({isSubDialogOpen: false});
+      this.setState({isTimeNotFilledOpen:true});
+      //
+    }else{
+      reserveUser(this.state.options[this.state.date].date, this.state.options[this.state.date].times[this.state.time]);
+      deleteReservedTime(this.state.options, this.state.date, this.state.time);
+      this.setState({isSubDialogOpen: false});
+      this.setState({open: false});
+    } 
+  }
+
+  handleDateNotFilledClose = () => {
+    this.setState({isDateNotFilledOpen:false});
+  };
+
+  handleTimeNotFilledClose = () => {
+    this.setState({isTimeNotFilledOpen: false});
+    this.setState({isSubDialogOpen:true});
   }
 
 
@@ -95,9 +118,42 @@ class SelectDialog extends React.Component{
         </div>
       )
     }
+
+    if(this.state.isDateNotFilledOpen){
+      return <Dialog
+        open
+        onClose={this.handleDateNotFilledClose}
+        aria-labelledby="form-dialog"
+      >
+      <DialogTitle id="form-dialog">Something has gone wrong</DialogTitle>
+      <DialogContent>
+        <DialogContentText>
+          Please, choose the date
+        </DialogContentText>
+      </DialogContent>
+      <Button onClick={this.handleDateNotFilledClose} color="secondary">Close</Button>
+      </Dialog>
+    }
+
+    if(this.state.isTimeNotFilledOpen){
+      return <Dialog
+        open
+        onClose={this.handleTimeNotFilledClose}
+        aria-labelledby="form"
+      >
+      <DialogTitle id="form">Something has gone wrong</DialogTitle>
+      <DialogContent>
+        <DialogContentText>
+          Please, choose the time
+        </DialogContentText>
+      </DialogContent>
+      <Button onClick={this.handleTimeNotFilledClose} color="secondary">Close</Button>
+      </Dialog>
+    }
+    
     return(
-      <div>
-        <Button onClick={this.handleClickOpen}>Select Data</Button>
+      <div style={{display: 'flex', justifyContent:"center"}}>
+        <Button onClick={this.handleClickOpen} variant="extendedFab" color="primary">Select Data</Button>
         <Dialog
           open={this.state.open}
           onClose = {this.handleClickClose}

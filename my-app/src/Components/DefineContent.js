@@ -4,8 +4,9 @@ import Typography from '@material-ui/core/Typography';
 import HomeContent from './HomeContent';
 import AboutUsContent from './AboutUsContent';
 import ContactContent from './ContactContent';
-import RecipeReviewCard from './MyProfile';
+//import RecipeReviewCard from './MyProfile';
 import PriceTable from './PriceTable';
+import MyProfile from './MyProfile';
 
 function TabContainer(props) {
   return (
@@ -35,7 +36,7 @@ class DefineContent extends React.Component{
       return <ContactContent />
     }
     if(value===4){
-      return <RecipeReviewCard />
+      return <MyProfile />
     }
   }
 }

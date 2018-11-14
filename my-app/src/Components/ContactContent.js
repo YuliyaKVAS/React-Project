@@ -22,18 +22,18 @@ function ContactContent(props){
     <div>
       <Grid Grid container spasing={24} style={{background:'rgba(0,0,255,0.1)'}}>
         <Grid item sm={12} className={classes.grid}>
-              <Typography variant ='h3' component="h5" className={classes.text}>
+              <Typography variant ='h3' component="h6" className={classes.text}>
                 Where you can find us
               </Typography>
-              <Typography component="p" variant='h5' className={classes.text}>
+              <Typography component="p" variant='h6' className={classes.text}>
               You can find us at the address below.
               </Typography>
         </Grid>
         <Grid item sm={6} className={classes.grid}>
         <MediaCard src={"/images/barber_building.jpg"}
-          title={"Title"}
-          description={"best people"}
-          header={"Title"}
+          title={"Barbershop building"}
+          description={"You will see the building of our barbershop as soon as you exit the metro."}
+          header={"Our berbershop"}
         />
         </Grid>
         <Grid item sm={6} className={classes.grid}>
@@ -50,9 +50,9 @@ function ContactContent(props){
         </Grid>
         <Grid item sm={6} className={classes.grid}>
           <MediaCard src={"/images/map-img4.jpg"}
-            title={"Title"}
-            description={"best people"}
-            header={"Title"}
+            title={"Map"}
+            description={"We are located at 25 Carnaby Street, off 78. If you're late, please call us"}
+            header={"Our location on the map"}
           />
         </Grid>
         <Grid item sm={6} className={classes.grid}>

@@ -60,7 +60,7 @@ class Wrapper extends React.Component{
           <NavTab value={this.state.value} handleChange={this.handleChange} currentUser={this.state.currentUser}/>
           {this.state.currentUser && <h2 style={{color: 'white'}}>Hello, {this.state.currentUser.name}</h2>}
            <DefineLogButtons setCurrentUser={this.setCurrentUser} currentUser={this.state.currentUser}/>
-          <DefineContent value={this.state.value}/>
+          <DefineContent value={this.state.value} />
           <Footer />
       </Grid>
       </Grid>
