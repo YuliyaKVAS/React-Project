@@ -9,9 +9,10 @@ import Input from '@material-ui/core/Input';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import createDates from './../Helpers/dayAndTimeData';
+import {reserveUser, deleteReservedTime} from '../Helpers/reserveUser';
+import { DialogContentText } from '@material-ui/core';
 
 
-const options = createDates();
 const styles = {
     root:{
         display: "flex",
@@ -27,8 +28,27 @@ class ReserveForm extends React.Component{
     state = {
         open: false,
         date: '',
-        time: ''
+        time: '',
+        options: null,
+        isErrorDialogOpen: false
     }
+
+    setOptions = (data) => {
+        if(data){
+            this.setState({
+                options: data
+            });
+        }else{
+            this.setState({
+                options:null
+            })
+        }
+        
+    } 
+
+    componentDidMount(){
+        this.setOptions(createDates());
+    };
 
     handleClickOpen = () => {
         this.setState({open: true});
@@ -46,8 +66,38 @@ class ReserveForm extends React.Component{
         this.setState({time: event.target.value});
     };
 
+    handleSubmitData = () => {
+      if(!this.state.date || !this.state.time){
+        this.setState({isErrorDialogOpen: true});
+      }else{
+        reserveUser(this.state.options[this.state.date].date, this.state.options[this.state.date].times[this.state.time]);
+        deleteReservedTime(this.state.options, this.state.date, this.state.time);
+        this.setState({open: false});
+      }
+      
+    };
+
+    handleErrorDialogClose  = () => {
+        this.setState({isErrorDialogOpen: false});
+    };
+
     render(){
         const { classes } = this.props;
+        if(this.state.isErrorDialogOpen){
+            return <Dialog
+                    open
+                    onClose={this.handleErrorDialogClose}
+                    aria-lebelledby="form"
+                   >
+                    <DialogTitle id="form">Something has gone wrong!</DialogTitle> 
+                    <DialogContent>
+                        <DialogContentText>
+                        You should choose both date and time!
+                        </DialogContentText>
+                    </DialogContent>
+                    <Button onClick={this.handleErrorDialogClose} variant="outlined" color="secondary">Close</Button>
+                   </Dialog>
+        }
         return(
             <div className={classes.root}>
                 <Button onClick={this.handleClickOpen}>Select</Button>
@@ -67,7 +117,7 @@ class ReserveForm extends React.Component{
                                     input={<Input id="date-native-simple" />}
                                 >
                                     <option value="" />
-                                    {options.map((item,i) => (<option value={i++}>{item.date}</option>))}
+                                    {this.state.options && this.state.options.map((item,i) => (<option value={i++}>{item.date}</option>))}
                                 </Select>
                             </FormControl>
                             <FormControl>
@@ -78,14 +128,15 @@ class ReserveForm extends React.Component{
                                     onChange={this.handleChangeTime}
                                     input={<Input id="time-native-simple"/>}
                                 >
-                                    <option value=""/>
-                                    {this.state.date!=="" && options[this.state.date].times.map((item, j) => (<option value={j++}>{item}</option>))}
+                                    {this.state.date && <option value=""/>}
+                                    {this.state.date!=="" && this.state.options[this.state.date].times.map((item, j) => (<option value={j++}>{item}</option>))}
 
                                 </Select>
                             </FormControl>
                         </form>
                     </DialogContent>
-
+                <Button onClick={this.handleSubmitData} variant="outlined" color="primary">Make appointment</Button>
+                <Button onClick={this.handleClickClose} variant="outlined" color="secondary">Close</Button>    
                 </Dialog>
             </div>
         )
