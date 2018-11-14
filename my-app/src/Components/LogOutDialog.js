@@ -25,6 +25,7 @@ export default class LogOutDialog extends React.Component{
         logOut();
         this.props.setCurrentUser(null)
         this.setState({open: false})
+        //window.location.href = '/home/';
     };
 
     render(){

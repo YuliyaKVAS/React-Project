@@ -92,7 +92,7 @@ class ReserveForm extends React.Component{
                     <DialogTitle id="form">Something has gone wrong!</DialogTitle> 
                     <DialogContent>
                         <DialogContentText>
-                        You should choose both date and time!
+                            You should choose both date and time!
                         </DialogContentText>
                     </DialogContent>
                     <Button onClick={this.handleErrorDialogClose} variant="outlined" color="secondary">Close</Button>
@@ -121,8 +121,9 @@ class ReserveForm extends React.Component{
                                 </Select>
                             </FormControl>
                             <FormControl>
-                                <InputLabel htmlFor="time-native-simple" disabled>Time</InputLabel>
+                                <InputLabel htmlFor="time-native-simple">Time</InputLabel>
                                 <Select
+                                    disabled={!this.state.date}
                                     native
                                     value={this.state.time}
                                     onChange={this.handleChangeTime}

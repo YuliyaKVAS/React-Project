@@ -55,7 +55,7 @@ export default class RegistrationForm extends React.Component {
                           password: this.state.password,
                           repeatPassword: this.state.repeatPassword});
   if(obj.isUserCreated){
-    this.setState({open: false, isSuccessfullRegistrationDialogOpen: true})
+    this.setState({open: false, isSuccessfullRegistrationDialogOpen: true,name: '', email:'', password:'', repeatPassword:''})
 
   }
   else if(obj.errorMsg==="Please fill in all fields correctly"){
@@ -89,13 +89,13 @@ handleUserExistsClose = () =>{
         onClose={this.handleSubDialogClose}
         aria-labelledby="form-dialog-title"
       >
-      <DialogTitle id="form-dialog-title">Welcome, {this.state.name}</DialogTitle>
+      <DialogTitle id="form-dialog-title">Welcome!</DialogTitle>
       <DialogContent>
         <DialogContentText>
-          Congratulations! You have registered! now you can sign in
+          Congratulations! You have registered! Now you can sign in
         </DialogContentText>
         </DialogContent>
-        <Button onClick={this.handleSubDialogClose} color="secondary" variant="outlined">
+        <Button onClick={this.handleSubDialogClose} color="secondary" variant="text">
           Close
         </Button>
       </Dialog>
