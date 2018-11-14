@@ -7,7 +7,7 @@ function createDates(){
         today.setDate(today.getDate() + 1);
         options.push({
             date : today.getDate() + "/" + 
-                   today.getMonth() + "/" + 
+                   Number(today.getMonth()+1) + "/" + 
                    today.getFullYear(),
             times: times.slice()
                 });
