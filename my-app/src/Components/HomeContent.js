@@ -71,19 +71,24 @@ function HomeContent(props) {
       <Grid item sm={12}>
       <div className={classes.block}>
       <Typography paragraph component='p' variant="h6" className={classes.text}>
-              Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over medium-high
-              heat. Add chicken, shrimp and chorizo, and cook, stirring occasionally until lightly
-              browned, 6 to 8 minutes. Transfer shrimp to a large plate and set aside, leaving
-              chicken and chorizo in the pan. Add pimentón, bay leaves, garlic, tomatoes, onion,
-              salt and pepper, and cook, stirring often until thickened and fragrant, about 10
-              minutes. Add saffron broth and remaining 4 1/2 cups chicken broth; bring to a boil.
+        <strong>We WELCOME... *All Age*All Race*All Cuts</strong><br/>
+        WE ARE LICENSED BARBERS... MASTERS OF OUR CRAFT...  
+        PROFESSIONAL SKILLS WITH CLIPPERS, SCISSORS, and RAZORS...  *ONLY 5  
+        STAR SERVICE HERE AT ALL PRO BARBERSHOP... PLEASE TRY ALL OF 
+        THE ALL PRO BARBERS
             </Typography>
             <Typography paragraph component='p' variant="h6" className={classes.text}>
-              Add rice and stir very gently to distribute. Top with artichokes and peppers, and cook
-              without stirring, until most of the liquid is absorbed, 15 to 18 minutes. Reduce heat
-              to medium-low, add reserved shrimp and mussels, tucking them down into the rice, and
-              cook again without stirring, until mussels have opened and rice is just tender, 5 to 7
-              minutes more. (Discard any mussels that don’t <a href="contuct">open.</a>)
+              <strong>FEEL BRAND NEW</strong><br/>
+              NOTHING LIKE THE ALL PRO BARBERSHOP EXPERIENCE TO GET  
+              YOU READY FOR THE ALL PRO LIFE..... CUTS and Specialties: 
+              (Short,Medium,or Long) Business-Fade-Comb Over-Under-
+              Spike-Mohawk-Fohawk-FlatTop-Taper-LineUp-BEARD TRIMS
+            </Typography>
+            <Typography paragraph component='p' variant="h6" className={classes.text}>
+              <strong>FINISHED PRODUCT</strong><br/>
+              YOUR HAIRCUT IS VERY IMPORTANT TO US... PLEASE COMMUNICATE WHAT YOU'RE LOOKING FOR,
+              AND BRING PICTURES ON YOUR PHONE TO HELP US... IF YOU HAVE TROUBLE...THAT'S OK...WE
+              ARE PROFESSIONALS WITH MANY YEARS OF EXPERIENCE, SO WE WILL FIND THE RIGHT CUT FOR YOU... 
             </Typography>
             </div> 
       </Grid>
@@ -91,15 +96,15 @@ function HomeContent(props) {
           
           <Grid item xs={6} className={classes.item}>
               <MediaCard src={"/images/barber.jpg"} 
-              title={"hfhf"} 
-              description={"hd"} 
-              header={"nnd"}/>
+              title={"Tools"} 
+              description={"We buy scissors and razors from the best manufacturers"} 
+              header={"The best and sharpest tools"}/>
           </Grid>
           <Grid item xs={6} className={classes.item}>
               <MediaCard src={"/images/barber-img1.jpg"} 
-              title={"hfhf"} 
-              description={"hd"} 
-              header={"nnd"}/>
+              title={"Our room"} 
+              description={"Here you can not only get a haircut but also relax"} 
+              header={"Comfortable room"}/>
           </Grid>
           <Grid item xs={12} className={classes.item}>
             <Accordeon />

@@ -64,34 +64,28 @@ function AboutUsContent(props){
       </Grid>
       <Grid item sm={6} >
         <MediaCard src={"/images/blackandwhite.ProperBarbershop-6.jpg"}
-        title={"Title"}
-        description={"we care about your health using only hypoallergenic cosmetics"}
+        title={"Materials and cosmetic"}
+        description={"We care about your health using only hypoallergenic cosmetics"}
         header={"Only high-quality materials and cosmetics"}
       />
       </Grid>
       <Grid item sm={6} >
         <MediaCard src={"/images/coffee.jpg"}
-        title={"Title"}
+        title={"Coffee"}
         description={"We have all kinds of coffee and tea as well as other drinks"}
         header={"We offer all our customers tea and coffee"}
       />
       </Grid>
       <Grid item sm={12}>
-      <Typography paragraph component='p' variant="h6" className={classes.text}>
-              Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over medium-high
-              heat. Add chicken, shrimp and chorizo, and cook, stirring occasionally until lightly
-              browned, 6 to 8 minutes. Transfer shrimp to a large plate and set aside, leaving
-              chicken and chorizo in the pan. Add pimentón, bay leaves, garlic, tomatoes, onion,
-              salt and pepper, and cook, stirring often until thickened and fragrant, about 10
-              minutes. Add saffron broth and remaining 4 1/2 cups chicken broth; bring to a boil.
-            </Typography>
-            <Typography paragraph component='p' variant="h6" className={classes.text}>
-              Add rice and stir very gently to distribute. Top with artichokes and peppers, and cook
-              without stirring, until most of the liquid is absorbed, 15 to 18 minutes. Reduce heat
-              to medium-low, add reserved shrimp and mussels, tucking them down into the rice, and
-              cook again without stirring, until mussels have opened and rice is just tender, 5 to 7
-              minutes more. (Discard any mussels that don’t open.)
-            </Typography>
+        <Typography paragraph component='p' variant="h6" className={classes.text}>
+          We believe that it is important not only to give you beautiful and fashionable 
+          haircuts, but also to give you the opportunity to have a good time. Our hairdressers 
+          will bring you coffee and tea and you can relax while you are being cut
+        </Typography>
+        <Typography paragraph component='p' variant="h6" className={classes.text}>
+          A lot of our customers come back to us! We want you to come back to us again and again.
+          Also we will be happy if you invite your friends to us.
+        </Typography>
       </Grid>
     </Grid>
     </div>
