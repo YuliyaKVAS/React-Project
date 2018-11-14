@@ -67,11 +67,11 @@ function createData(name, price) {
 
 const rows = [
   createData('male haircut', '11.40 £'),
-  createData('female haircut (long hair)', '19,38 £'),
-  createData('female haircut (medium hair)', '17,10 £'),
-  createData('hair coloring', '22,80 £'),
+  createData('male haircut + coloring', '19,38 £'),
+  createData('male haircut (medium hair) + beard trim', '13,10 £'),
+  createData('complex hair coloring', '22,80 £'),
   createData('beard trim', '5,70 £'),
-  createData('manicure', '17,10 £'),
+  createData('washing hair', '4,10 £'),
 ];
 
 function PriceTable(props) {
@@ -81,8 +81,9 @@ function PriceTable(props) {
     <div className={classes.root}>
     <Grid  container spasing={24} style={{background:'rgba(0,0,255,0.1)'}} >
     <Grid item sm={12} className={classes.item}>
-    <Typography component="h3" variant="h5" className={classes.text}>  
-          You can find information about the cost of services in our salon below:
+    <Typography component="h3" variant="h5" className={classes.text}>
+      We provide a wide <strong>range of services</strong><br/>
+      You can find information about the cost of services in our salon below:
     </Typography>
     <Paper className={classes.root}>
       <Table className={classes.table}>
