@@ -8,12 +8,12 @@ import InputLabel from '@material-ui/core/InputLabel';
 import Input from '@material-ui/core/Input';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import {createDates, fetchAvailibleData} from './../Helpers/dayAndTimeData';
+import {fetchAvailibleData} from './../Helpers/dayAndTimeData';
 import {reserveUser, deleteReservedTime} from '../Helpers/reserveUser';
 import { DialogContentText } from '@material-ui/core';
-import {cancelAppointment} from './../Helpers/cancelAppointment';
+//import {cancelAppointment} from './../Helpers/cancelAppointment';
 
-//createDates()
+
 const styles = {
     root:{
         display: "flex",
@@ -90,7 +90,7 @@ class ReserveForm extends React.Component{
             return <Dialog
                     open
                     onClose={this.handleErrorDialogClose}
-                    aria-lebelledby="form"
+                    aria-labelledby="form"
                    >
                     <DialogTitle id="form">Something has gone wrong!</DialogTitle> 
                     <DialogContent>
@@ -120,7 +120,7 @@ class ReserveForm extends React.Component{
                                     input={<Input id="date-native-simple" />}
                                 >
                                     <option value="" />
-                                    {this.state.options && this.state.options.map((item,i) => (<option value={i++}>{item.date}</option>))}
+                                    {this.state.options && this.state.options.map((item,i) => (<option value={i++} key={i}>{item.date}</option>))}
                                 </Select>
                             </FormControl>
                             <FormControl>
@@ -133,7 +133,7 @@ class ReserveForm extends React.Component{
                                     input={<Input id="time-native-simple"/>}
                                 >
                                     {this.state.date && <option value=""/>}
-                                    {this.state.date!=="" && this.state.options[this.state.date].times.map((item, j) => (<option value={j++}>{item}</option>))}
+                                    {this.state.date!=="" && this.state.options[this.state.date].times.map((item, j) => (<option value={j++} key={j}>{item}</option>))}
 
                                 </Select>
                             </FormControl>

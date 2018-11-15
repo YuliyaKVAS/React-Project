@@ -50,7 +50,7 @@ class Footer extends React.Component{
     <div className={classes.root}>
       <Grid container spacing={0}>
         <Grid item xs={12} sm={4} className={classes.grid}>
-          <Typography className={[classes.footerText, classes.footerSections]}>
+          <Typography className={classes.footerText} style={{padding: '0 16px'}}>
             International beauty center
                   <br/>25 Carnaby Street, off 78
                   <br />LIVERPOOL
@@ -60,13 +60,13 @@ class Footer extends React.Component{
           </Typography>
         </Grid>
         <Grid item xs={12} sm={4} className={classes.grid}>
-        <Typography className={[classes.footerText, classes.footerSections]}>
+        <Typography className={classes.footerText} style={{padding: '0 16px'}}>
             To find more information about Barbershops follow
         </Typography>
         <Button href="https://en.wikipedia.org/wiki/Barbershop" color="primary" variant="outlined">
             Link
         </Button>
-        <Typography className={[classes.footerText, classes.footerSections]}>
+        <Typography className={classes.footerText} style={{padding: '0 16px'}}>
             To find more information about history of the barbershop follow
         </Typography>
         <Button href="https://www.complex.com/style/2016/04/an-in-depth-look-at-an-american-staple-the-barbershop" color="primary" variant="outlined">
@@ -88,7 +88,7 @@ class Footer extends React.Component{
           </Button>
 
         </Grid>
-        <Grid className={[classes.subFooter, classes.grid]} item xs={12}>
+        <Grid className={classes.subFooter} style={{textAlign: 'center'}} item xs={12}>
           <span className={classes.footerText}>©  {currentYear} All Rights Reserved</span>
         </Grid>
       </Grid>

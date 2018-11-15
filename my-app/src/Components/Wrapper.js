@@ -44,7 +44,7 @@ class Wrapper extends React.Component{
       }else {        
         this.setState(({value}) => ({
           currentUser: null,
-          value: value == 4 ? 0 : value
+          value: value === 4 ? 0 : value
         }))
       }
   }

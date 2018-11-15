@@ -1,6 +1,5 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
-import { withStyles } from '@material-ui/core/styles';
 import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
@@ -42,7 +41,7 @@ class CancelReserves extends React.Component{
             return <Dialog
                     open
                     onClose={this.handleErrorDialogClose}
-                    aria-lebelledby="error-dialog"
+                    aria-labelledby="error-dialog"
             >
                 <DialogTitle id="error-dialog">Error</DialogTitle>
                 <DialogContent>
@@ -58,7 +57,7 @@ class CancelReserves extends React.Component{
             return <Dialog
                     open
                     onClose={this.handleCloseCancelDialog}
-                    aria-lebelledby="cancel-dialog"
+                    aria-labelledby="cancel-dialog"
             >
                 <DialogTitle id="cancel-dialog">Cancel</DialogTitle>
                 <DialogContent>

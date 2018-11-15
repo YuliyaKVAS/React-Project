@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import CancelReserves from './CancelReserves';
 import MediaCard from './MediaCard';
+//import {checkAppointment} from './../Helpers/checkAppointment';
 
 
 const styles = theme => ({
@@ -66,6 +67,7 @@ const {classes} = props;
           </Paper>
         </Grid>
         <Grid item sm={4}></Grid>
+        
       </Grid>
     </div>
   )

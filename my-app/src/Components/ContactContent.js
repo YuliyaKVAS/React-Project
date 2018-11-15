@@ -19,8 +19,7 @@ const styles = {
 function ContactContent(props){
   const {classes} = props;
   return(
-    <div>
-      <Grid Grid container spasing={24} style={{background:'rgba(0,0,255,0.1)'}}>
+      <Grid container spasing={24} style={{background:'rgba(0,0,255,0.1)'}}>
         <Grid item sm={12} className={classes.grid}>
               <Typography variant ='h3' component="h6" className={classes.text}>
                 Where you can find us
@@ -64,7 +63,6 @@ function ContactContent(props){
         </Typography>
         </Grid>
       </Grid>
-    </div>
   );
 
 }
