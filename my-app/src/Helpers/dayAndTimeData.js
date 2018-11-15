@@ -1,5 +1,5 @@
 
-function fetchAvailibleData(){
+function generate() {
     let today = new Date();
     let times = ['10:00', '10:30', '10:40',  '11:00', '12:00',
                 '13:00', '13:40', '14:00', '15:00', '16:00',
@@ -15,11 +15,14 @@ function fetchAvailibleData(){
                 });
     }
 
-    //return options;
     localStorage.setItem("availibleDates", JSON.stringify(options))
-    //return;
-    options = JSON.parse(localStorage.getItem("availibleDates"));
-    return options;
+}
+
+function fetchAvailibleData(){
+    if(localStorage.getItem("availibleDates") == null){
+        generate()
+    }
+    return JSON.parse(localStorage.getItem("availibleDates"));
 };
 
 export {fetchAvailibleData}

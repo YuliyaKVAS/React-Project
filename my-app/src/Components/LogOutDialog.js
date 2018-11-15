@@ -32,7 +32,7 @@ export default class LogOutDialog extends React.Component{
         return(
         <div style={{margin:'24px',
                     float: 'right'}}>
-            <Button onClick={this.handleClickOpen} variant="outlined" color="primary">Log out</Button>
+            <Button onClick={this.handleClickOpen} variant="extendedFab" color="primary">Log out</Button>
             <Dialog
                 open={this.state.open}
                 aria-labelledby="form-dialog-title"

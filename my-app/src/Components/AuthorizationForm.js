@@ -139,7 +139,7 @@ export default class AuthorizationForm extends React.Component {
     return (
       <div style={{margin:'24px',
                   float: 'right'}}>
-        <Button onClick={this.handleClickOpen} variant="outlined" color="primary">Sign In</Button>
+        <Button onClick={this.handleClickOpen} variant="extendedFab" color="primary">Sign In</Button>
         <Dialog
           open={this.state.open}
           onClose={this.handleClose}

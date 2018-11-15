@@ -158,7 +158,7 @@ handleUserExistsClose = () =>{
     return (
       <div style={{margin:'24px',
                   float: 'right'}}>
-        <Button onClick={this.handleClickOpen} variant="outlined" color="primary">Sign Up</Button>
+        <Button onClick={this.handleClickOpen} variant="extendedFab" color="primary">Sign Up</Button>
         <Dialog
           open={this.state.open}
           onClose={this.handleClose}
