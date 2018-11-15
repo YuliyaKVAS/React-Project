@@ -15,6 +15,7 @@ const styles = {
   },
   media: {
     height: 140,
+    cursor: 'default'
   },
   root:{
     float: 'left'

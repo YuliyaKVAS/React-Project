@@ -8,11 +8,12 @@ import InputLabel from '@material-ui/core/InputLabel';
 import Input from '@material-ui/core/Input';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import createDates from './../Helpers/dayAndTimeData';
+import {createDates, fetchAvailibleData} from './../Helpers/dayAndTimeData';
 import {reserveUser, deleteReservedTime} from '../Helpers/reserveUser';
 import { DialogContentText } from '@material-ui/core';
+import {cancelAppointment} from './../Helpers/cancelAppointment';
 
-
+//createDates()
 const styles = {
     root:{
         display: "flex",
@@ -30,7 +31,7 @@ class ReserveForm extends React.Component{
         date: '',
         time: '',
         options: null,
-        isErrorDialogOpen: false
+        isErrorDialogOpen: false,
     }
 
     setOptions = (data) => {
@@ -47,7 +48,8 @@ class ReserveForm extends React.Component{
     } 
 
     componentDidMount(){
-        this.setOptions(createDates());
+        //this.setOptions(createDates());
+        this.setOptions(fetchAvailibleData());
     };
 
     handleClickOpen = () => {
@@ -80,6 +82,7 @@ class ReserveForm extends React.Component{
     handleErrorDialogClose  = () => {
         this.setState({isErrorDialogOpen: false});
     };
+
 
     render(){
         const { classes } = this.props;

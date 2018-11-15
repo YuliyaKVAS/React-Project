@@ -21,10 +21,12 @@ const deleteReservedTime = (options, index, time) => {
     console.log("times array: " + options[index].times)
     if(options[index].times.length===1){
         options.splice(index,1);
-        return
+        //return
+        return localStorage.setItem("availibleDates", JSON.stringify(options))
     }else{
         options[index].times.splice(time,1);
-        return
+        //return
+        return localStorage.setItem("availibleDates", JSON.stringify(options))
     }
 }
 

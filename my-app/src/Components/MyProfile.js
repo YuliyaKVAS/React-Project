@@ -5,17 +5,15 @@ import { withStyles } from '@material-ui/core/styles';
 import ReserveForm from './ReserveForm';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
+import CancelReserves from './CancelReserves';
+import MediaCard from './MediaCard';
 
 
 const styles = theme => ({
   root:{
     width: '100%',
-    //marginBottom: '32px',
   },
   item:{
-    //display: 'flex',
-    //marginLeft: '48px',
-    //margin: 'auto'
     marginTop:'32px',
     justify: 'center',
     margin: 'auto',
@@ -26,11 +24,13 @@ const styles = theme => ({
     marginBottom: '48px',
     marginRight: '48px',
     margin: 'auto',
+    marginTop: '48px',
     color: "#F9FBE7"
   },
   paper:{
     margin:'24px',
-    padding: '24px'
+    padding: '24px',
+    textAlign: 'center'
   }
 });
 
@@ -40,34 +40,32 @@ const {classes} = props;
     <div className={classes.root}>
       <Grid container spasing={24} style={{background:'rgba(0,0,255,0.1)'}}>
         <Grid item sm={6}>
-          <Paper className={classes.paper}>
-            <Typography variant="h5" component="h3">
-              The main concept of our salon is quality
-            </Typography>
-            <Typography component="p">
-              All our masters are professionals
-            </Typography>
-          </Paper>
+        <MediaCard src={"/images/my-profile1.jpg"} 
+                   title={"Tools"} 
+                  description={"We buy scissors and razors from the best manufacturers"} 
+                  header={"The best and sharpest tools"}
+          />
         </Grid>
         <Grid item sm={6}>
-          <Paper className={classes.paper}>
-            <Typography variant="h5" component="h3">
-              The main concept of our salon is quality
-            </Typography>
-            <Typography component="p">
-              All our masters are professionals
-            </Typography>
-          </Paper>
+          <MediaCard src={"/images/my-profile-2.jpg"} 
+                     title={"Tools"} 
+                     description={"We buy scissors and razors from the best manufacturers"} 
+                     header={"The best and sharpest tools"}
+          />
         </Grid>
         <Grid item sm={12} className={classes.item}>
           <ReserveForm />
         </Grid>
-        <Grid item sm={12}>
-          <Typography component="p" variant="h6">
-            If you still have any questions, please write us in our profiles in social networks or call us <br/>
-            +44-7871234567
-          </Typography>
+        <Grid item sm={4}></Grid>
+        <Grid item sm={4}>
+        <Paper className={classes.paper}>
+            <Typography variant="h5" component="h3">
+              You can also cancel your appointment
+            </Typography>
+              <CancelReserves />
+          </Paper>
         </Grid>
+        <Grid item sm={4}></Grid>
       </Grid>
     </div>
   )
