@@ -23,7 +23,6 @@ import { regexpEmail, regexpPassword } from "./regExps";
       }
     }
     else{
-    //  users.push(user);
     let newUser = {
       name: name,
       password: password,
@@ -77,9 +76,7 @@ const signIn = ({email, password}) => {
     localStorage.setItem('currentUser', JSON.stringify(currentUser));
     return {
       isSignIn: true,
-      currentUser /// 11111important
-      //currentUserEmail: currentUser.email,
-      //currentUserName: currentUser.name
+      currentUser 
     }
   }
 
@@ -90,7 +87,6 @@ function getCurrentUser() {
 }
 
 function logOut(){
-  //window.location.reload();
   return localStorage.removeItem('currentUser');
 }
 
