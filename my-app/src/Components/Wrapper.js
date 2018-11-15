@@ -6,18 +6,6 @@ import Footer from './Footer';
 import {getCurrentUser} from './../Helpers/users-api';
 import DefineLogButtons from './DefineLogButtons';
 
-
-
-/*const styles = theme => ({
-  root: {
-    flexGrow: 1,
-    overflowX: 'hidden'
-  },
-  grid:{
-    background: 'red',
-  }
-});*/
-
 class Wrapper extends React.Component{
   constructor(props){
     super(props);

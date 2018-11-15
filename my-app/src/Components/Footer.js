@@ -7,7 +7,6 @@ import Button from '@material-ui/core/Button';
 const styles = theme => ({
   root: {
     flexGrow: 1,
-    //marginTop: 30,
     backgroundColor: "rgba(255, 125, 255, 0.19)",
     borderTop: 'solid 1px #827717',
     paddingTop: '16px',
@@ -38,10 +37,7 @@ const styles = theme => ({
 
 });
 
-
-
 class Footer extends React.Component{
-
 
   render(){
     const { classes } = this.props;
@@ -86,7 +82,6 @@ class Footer extends React.Component{
               src="/images/icons8-vk.com-48.png"
           />
           </Button>
-
         </Grid>
         <Grid className={classes.subFooter} style={{textAlign: 'center'}} item xs={12}>
           <span className={classes.footerText}>©  {currentYear} All Rights Reserved</span>
@@ -96,7 +91,5 @@ class Footer extends React.Component{
   );
 }
 }
-
-
 
 export default withStyles(styles)(Footer);

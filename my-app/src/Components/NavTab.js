@@ -4,34 +4,13 @@ import Tabs from '@material-ui/core/Tabs';
 import NoSsr from '@material-ui/core/NoSsr';
 import Tab from '@material-ui/core/Tab';
 
-
-/*function TabContainer(props) {
-  return (
-    <Typography component="div" style={{ padding: 8 * 3 }}>
-      {props.children}
-    </Typography>
-  );
-}*/
-
-/*TabContainer.propTypes = {
-  children: PropTypes.node.isRequired,
-};*/
-
 function LinkTab(props) {
   return <Tab component="a" onClick={event => event.preventDefault()} {...props} />;
 }
 
 class NavTabs extends React.Component {
-  //state = {
-    //value: 0,
-  //};
-
-  //handleChange = (event, value) => {
-  //  this.setState({ value });
-//  };
-
+  
   render() {
-    //const { classes } = this.props;
     const { value } = this.props;
 
     return (

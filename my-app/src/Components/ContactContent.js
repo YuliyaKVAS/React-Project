@@ -43,8 +43,7 @@ function ContactContent(props){
                   25 Carnaby Street, off 78<br/>
                   LIVERPOOL<br/>
                   NR32 4WY<br/>
-                  UK
-                  
+                  UK 
                 </Typography>
         </Grid>
         <Grid item sm={6} className={classes.grid}>

@@ -11,8 +11,6 @@ import Select from '@material-ui/core/Select';
 import {fetchAvailibleData} from './../Helpers/dayAndTimeData';
 import {reserveUser, deleteReservedTime} from '../Helpers/reserveUser';
 import { DialogContentText } from '@material-ui/core';
-//import {cancelAppointment} from './../Helpers/cancelAppointment';
-
 
 const styles = {
     root:{
@@ -48,7 +46,6 @@ class ReserveForm extends React.Component{
     } 
 
     componentDidMount(){
-        //this.setOptions(createDates());
         this.setOptions(fetchAvailibleData());
     };
 
@@ -82,7 +79,6 @@ class ReserveForm extends React.Component{
     handleErrorDialogClose  = () => {
         this.setState({isErrorDialogOpen: false});
     };
-
 
     render(){
         const { classes } = this.props;

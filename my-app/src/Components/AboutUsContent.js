@@ -8,9 +8,6 @@ import Paper from '@material-ui/core/Paper';
 const styles = {
   root: {
     width: '100%',
-    //maxWidth: 800,
-    //padding: '24px',
-    //margin: 'auto',
     marginBottom: 0,
     overflowX: 'hidden'
   },
@@ -28,7 +25,6 @@ const styles = {
     color: 'white',
     padding: '8px',
     margin: '4px'
-   // textAlign: 'center'
   }
 };
 
@@ -89,8 +85,6 @@ function AboutUsContent(props){
       </Grid>
     </Grid>
     </div>
-
-
   )
 }
 

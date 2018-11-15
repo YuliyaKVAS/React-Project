@@ -7,7 +7,6 @@ import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import CancelReserves from './CancelReserves';
 import MediaCard from './MediaCard';
-//import {checkAppointment} from './../Helpers/checkAppointment';
 
 
 const styles = theme => ({
@@ -40,20 +39,18 @@ const {classes} = props;
   return(
     <div className={classes.root}>
       <Grid container spasing={24} style={{background:'rgba(0,0,255,0.1)'}}>
-        <Grid item sm={6}>
-        <MediaCard src={"/images/my-profile1.jpg"} 
-                   title={"Tools"} 
-                  description={"We buy scissors and razors from the best manufacturers"} 
-                  header={"The best and sharpest tools"}
-          />
+        <Grid item sm={4}></Grid>
+        <Grid item sm={4}>
+          <Paper className={classes.paper}>
+            <Typography variant="h5" component="h3">
+              Here you can make an appointment.
+            </Typography>
+            <Typography component="p">
+              Just choose the appropriate day and time!
+            </Typography>
+          </Paper>
         </Grid>
-        <Grid item sm={6}>
-          <MediaCard src={"/images/my-profile-2.jpg"} 
-                     title={"Tools"} 
-                     description={"We buy scissors and razors from the best manufacturers"} 
-                     header={"The best and sharpest tools"}
-          />
-        </Grid>
+        <Grid item sm={4}></Grid>
         <Grid item sm={12} className={classes.item}>
           <ReserveForm />
         </Grid>

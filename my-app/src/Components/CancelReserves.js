@@ -46,7 +46,7 @@ class CancelReserves extends React.Component{
                 <DialogTitle id="error-dialog">Error</DialogTitle>
                 <DialogContent>
                     <DialogContentText>
-                    User hasn't reserves!
+                        User hasn't reserves!
                     </DialogContentText>
                 </DialogContent>
                 <Button onClick={this.handleErrorDialogClose} variant="text" color="secondary">Close</Button>

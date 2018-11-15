@@ -43,16 +43,11 @@ export default class AuthorizationForm extends React.Component {
       email: this.state.email,
       password: this.state.password
     });
-    //
-    //if(obj.isSignIn){
-     // this.props.setCurrentUser(obj.currentUser);
-   // }
-    //
+  
     if(obj.currentUser){
       this.props.setCurrentUser(obj.currentUser);
     }
   
-    //this.props.setCurrentUser(obj);
     if(obj.isSignIn){
       this.setState({open: false})
     }

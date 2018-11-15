@@ -62,20 +62,19 @@ function HomeContent(props) {
 
   return (
     <div className={classes.root}>
-
       <Grid  container spasing={24} style={{background:'rgba(0,0,255,0.1)'}} >
-      <Grid item sm={12} className={classes.item}>
-        <Typography variant='h1' component="h3" className={classes.text}>barbershop</Typography>
-      </Grid>
+        <Grid item sm={12} className={classes.item}>
+          <Typography variant='h1' component="h3" className={classes.text}>barbershop</Typography>
+        </Grid>
 
-      <Grid item sm={12}>
-      <div className={classes.block}>
-      <Typography paragraph component='p' variant="h6" className={classes.text}>
-        <strong>We WELCOME... *All Age*All Race*All Cuts</strong><br/>
-        WE ARE LICENSED BARBERS... MASTERS OF OUR CRAFT...  
-        PROFESSIONAL SKILLS WITH CLIPPERS, SCISSORS, and RAZORS...  *ONLY 5  
-        STAR SERVICE HERE AT ALL PRO BARBERSHOP... PLEASE TRY ALL OF 
-        THE ALL PRO BARBERS
+        <Grid item sm={12}>
+          <div className={classes.block}>
+            <Typography paragraph component='p' variant="h6" className={classes.text}>
+              <strong>We WELCOME... *All Age*All Race*All Cuts</strong><br/>
+              WE ARE LICENSED BARBERS... MASTERS OF OUR CRAFT...  
+              PROFESSIONAL SKILLS WITH CLIPPERS, SCISSORS, and RAZORS...  *ONLY 5  
+              STAR SERVICE HERE AT ALL PRO BARBERSHOP... PLEASE TRY ALL OF 
+              THE ALL PRO BARBERS
             </Typography>
             <Typography paragraph component='p' variant="h6" className={classes.text}>
               <strong>FEEL BRAND NEW</strong><br/>
@@ -90,33 +89,26 @@ function HomeContent(props) {
               AND BRING PICTURES ON YOUR PHONE TO HELP US... IF YOU HAVE TROUBLE...THAT'S OK...WE
               ARE PROFESSIONALS WITH MANY YEARS OF EXPERIENCE, SO WE WILL FIND THE RIGHT CUT FOR YOU... 
             </Typography>
-            </div> 
+          </div> 
       </Grid>
           
-          
-          <Grid item xs={6} className={classes.item}>
-              <MediaCard src={"/images/barber.jpg"} 
-              title={"Tools"} 
-              description={"We buy scissors and razors from the best manufacturers"} 
-              header={"The best and sharpest tools"}/>
-          </Grid>
-          <Grid item xs={6} className={classes.item}>
-              <MediaCard src={"/images/barber-img1.jpg"} 
-              title={"Our room"} 
-              description={"Here you can not only get a haircut but also relax"} 
-              header={"Comfortable room"}/>
-          </Grid>
-          <Grid item xs={12} className={classes.item}>
-            <Accordeon />
-          </Grid>
-
-        
+      <Grid item xs={6} className={classes.item}>
+        <MediaCard src={"/images/barber.jpg"} 
+          title={"Tools"} 
+          description={"We buy scissors and razors from the best manufacturers"} 
+          header={"The best and sharpest tools"}/>
       </Grid>
-      
-
-      
-      
-    </div>
+      <Grid item xs={6} className={classes.item}>
+        <MediaCard src={"/images/barber-img1.jpg"} 
+          title={"Our room"} 
+          description={"Here you can not only get a haircut but also relax"} 
+          header={"Comfortable room"}/>
+      </Grid>
+      <Grid item xs={12} className={classes.item}>
+        <Accordeon />
+      </Grid>
+    </Grid> 
+  </div>
   );
 }
 
