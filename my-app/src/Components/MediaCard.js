@@ -11,7 +11,11 @@ const styles = {
   card: {
     maxWidth: 345,
     margin:'auto',
-    display: 'flex'
+    display: 'flex',
+    cursor: 'default'
+  },
+  cardAction:{
+    cursor: 'default'
   },
   media: {
     height: 140,
@@ -27,7 +31,7 @@ function MediaCard(props) {
   return (
   <div className="classes.root">
     <Card className={classes.card}>
-      <CardActionArea>
+      <CardActionArea className={classes.cardAction}>
         <CardMedia
           className={classes.media}
           image={props.src}

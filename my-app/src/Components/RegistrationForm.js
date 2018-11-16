@@ -26,7 +26,7 @@ export default class RegistrationForm extends React.Component {
     this.setState({ open: true });
   };
   handleClose = () => {
-    this.setState({ open: false });
+    this.setState({ open: false, name:'', email: '', password:'', repeatPassword:''});
   };
 
   handleSubDialogClose = () => {

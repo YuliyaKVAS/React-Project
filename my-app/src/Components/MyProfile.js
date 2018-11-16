@@ -6,8 +6,6 @@ import ReserveForm from './ReserveForm';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import CancelReserves from './CancelReserves';
-import MediaCard from './MediaCard';
-
 
 const styles = theme => ({
   root:{

@@ -4,7 +4,7 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { DialogContentText } from '@material-ui/core';
-import {cancelAppointment} from './../Helpers/cancelAppointment';
+import {getReservesLength, cancelAppointment} from './../Helpers/cancelAppointment';
 
 class CancelReserves extends React.Component{
     state={
@@ -13,14 +13,11 @@ class CancelReserves extends React.Component{
     };
 
     handleCancelDialogOpen = () => {
-        const cancel = cancelAppointment();
-        if(cancel.message==="User hasn't reserves!"){
-            this.setState({isErrorDialogOpen: true})
-        }
-        else{
+        if(getReservesLength() === 0){
+            this.setState({isErrorDialogOpen: true});
+        }else{
             this.setState({isCancelDialogOpen: true});
-        }
-        
+        }  
     };
 
     handleErrorDialogClose = () => {
@@ -46,7 +43,7 @@ class CancelReserves extends React.Component{
                 <DialogTitle id="error-dialog">Error</DialogTitle>
                 <DialogContent>
                     <DialogContentText>
-                        User hasn't reserves!
+                        User has no appointment yet!
                     </DialogContentText>
                 </DialogContent>
                 <Button onClick={this.handleErrorDialogClose} variant="text" color="secondary">Close</Button>
@@ -70,6 +67,7 @@ class CancelReserves extends React.Component{
             </Dialog>
         }
         return <Button onClick={this.handleCancelDialogOpen} variant="text" color="secondary">Cancel appointment</Button>
+
     }
 }
 

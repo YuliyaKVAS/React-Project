@@ -25,7 +25,7 @@ export default class AuthorizationForm extends React.Component {
   };
 
   handleClose = () => {
-    this.setState({ open: false });
+    this.setState({ open: false, email:'', password:''});
   };
 
   handleChangeEmail = (event) => {

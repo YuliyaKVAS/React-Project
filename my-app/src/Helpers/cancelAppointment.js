@@ -1,14 +1,20 @@
 import {getCurrentUser} from './users-api';
 
-const cancelAppointment = () => {
+const getReservesLength = () => {
     const currentUserEmail = getCurrentUser().email;
-    const currentUserName = getCurrentUser().name;
-    const currentUserPassword = JSON.parse(localStorage.getItem(currentUserEmail)).password;
-    if(JSON.parse(localStorage.getItem(currentUserEmail)).reserves.length===0){
+    return JSON.parse(localStorage.getItem(currentUserEmail)).reserves.length;
+}
+
+const cancelAppointment = () => {
+    
+    if(getReservesLength() === 0){
         return {
             message: "User hasn't reserves!"
         }
     }else{
+        const currentUserEmail = getCurrentUser().email;
+        const currentUserName = getCurrentUser().name;
+        const currentUserPassword = JSON.parse(localStorage.getItem(currentUserEmail)).password;
         const updatedUserValue = {
             name: currentUserName,
             password: currentUserPassword,
@@ -23,4 +29,4 @@ const cancelAppointment = () => {
     
 };
 
-export {cancelAppointment};
+export {getReservesLength,cancelAppointment};

@@ -54,7 +54,7 @@ class ReserveForm extends React.Component{
     };
 
     handleClickClose = () => {
-        this.setState({open: false});
+        this.setState({open: false, date:'', time:''});
     };
 
     handleChangeDate = (event) => {
@@ -71,7 +71,7 @@ class ReserveForm extends React.Component{
       }else{
         reserveUser(this.state.options[this.state.date].date, this.state.options[this.state.date].times[this.state.time]);
         deleteReservedTime(this.state.options, this.state.date, this.state.time);
-        this.setState({open: false});
+        this.setState({open: false, date:'', time: ''});
       }
       
     };
