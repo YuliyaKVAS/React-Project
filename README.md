@@ -3,13 +3,13 @@
 This project bootstrapped with Create React App using Material UI. Local storage is used as a database.
 
 ###The following steps are required to run this project:
-'''
+```
 ### git clone
 to install all dependencies:
 ### npm install
 ### npm start
 ### Open http://localhost:3000 to view it in the browser.
-'''
+```
 
 When the user is **not authorized the site displays navigation with 4 pages** (HOME, ABOUT US, SERVICES and CONTACTS).
 The user has the opportunity to **register** and **log in** to the site and also **to log out** from the site. 
