@@ -16,7 +16,7 @@ The user has the opportunity to **register** and **log in** to the site and also
 There are buttons for _sign up_ and _log in_ on each of these pages. If the user **is authorized the button log out is displayed**.
 
 If user enters data in an _incorrect format_, the user will see a _notification about it_.
-**The navigation menu displays the _fifth page - the user's personal account_ (called MY PROFILE) when  user is authorized**.
+**If user is authorized, the navigation menu will display the 5th page - the user's personal account_ (called MY PROFILE)**.
 
 User can **make an appointment** in  personal account. 
 Possible dates and time of appointment are relevant (past dates are not available, user sees only future dates while making an appointment). On the same day and at the same time only one user can make an appointment.
