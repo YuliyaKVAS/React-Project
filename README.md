@@ -1,14 +1,14 @@
 # React-Project
 ## A promo site for Barbershop<br/>
 This project bootstrapped with Create React App using Material UI. Local storage is used as a database.
+**The following steps are required to run this project:**
 
-###The following steps are required to run this project:
 ```
-### git clone
+git clone
 to install all dependencies:
-### npm install
-### npm start
-### Open http://localhost:3000 to view it in the browser.
+npm install
+npm start
+Open http://localhost:3000 to view it in the browser.
 ```
 
 When the user is **not authorized the site displays navigation with 4 pages** (HOME, ABOUT US, SERVICES and CONTACTS).
