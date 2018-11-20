@@ -13,15 +13,28 @@ function generate() {
                    today.getFullYear(),
             times: times.slice()
                 });
-    }
+    };
 
-    localStorage.setItem("availibleDates", JSON.stringify(options))
+    let creationDate = new Date();
+    let createDate = creationDate.getFullYear() + "/" + Number(creationDate.getMonth() + 1) +
+     "/" + creationDate.getDate();
+
+    localStorage.setItem("creationDte", createDate);
+    localStorage.setItem("availibleDates", JSON.stringify(options));
 }
 
 function fetchAvailibleData(){
+    let today = new Date();
+    today = today.getFullYear() + "/" + Number(today.getMonth()+1) + "/" + today.getDate();
     if(localStorage.getItem("availibleDates") == null){
         generate()
     }
+
+    if(localStorage.getItem("availibleDates") !== null && 
+    Date.parse(localStorage.getItem("creationDte")) < Date.parse(today)){
+        generate()
+    }
+    
     return JSON.parse(localStorage.getItem("availibleDates"));
 };
 
