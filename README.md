@@ -19,7 +19,7 @@ If user enters data in an _incorrect format_, the user will see a _notification 
 **If user is authorized, the navigation menu will display the 5th page - the user's personal account_ (called MY PROFILE)**.
 
 User can **make an appointment** in  personal account. 
-Possible dates and time of appointment are relevant (past dates are not available, user sees only future dates while making an appointment). On the same day and at the same time only one user can make an appointment.
+Possible dates and time of appointment are relevant (past dates are not available, user sees only future dates while making an appointment).
 User can **cancel appointment**.
 
 
